@@ -79,3 +79,10 @@ nav ul li {
     background: teal;
     border: 2px solid teal;
 }
+
+#ingredientsCheck {
+  margin-left: 200px;
+  margin-right: 200px;
+  text-align: center;
+  line-height: 2em;
+}
