@@ -1,8 +1,15 @@
-body {
+.homepage {
     margin: 0;
     background-image: url(https://www.inspiredtaste.net/wp-content/uploads/2012/10/Southside-Cocktail-Recipe-1-1200.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+.all-cocktails {
+    margin: 0
+}
+.all-cocktails  main {
+    margin: 0 auto;
+    max-width: 1200px;
 }
 .bg-cover {
     position: absolute;
@@ -19,6 +26,8 @@ a {
 }
 header {
     background-color: black;
+}
+.homepage header {
     opacity: 0.5;
     width: 100%;
     position: absolute;
@@ -78,4 +87,27 @@ nav ul li {
     .yes:hover {
     background: teal;
     border: 2px solid teal;
+}
+.all-cocktails h2 {
+    width: 100%;
+    background-color: #eaeaea;
+    padding: 10px;
+}
+#Vodka, #Tequila, #Rum, #Gin, #Whiskey, #Cognac {
+    display: flex;
+    flex-flow: wrap;
+}
+.cocktail {
+    width: 25%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.cocktail img {
+    max-width: 100%;
+}
+.cocktail h2 {
+    background-color: aliceblue;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
 }
