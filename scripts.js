@@ -22,7 +22,7 @@ whiskeyCocktails.push(new Cocktail());
 cognacCocktails.push(new Cocktail());
 
 
-
+// Build each cocktail to the all cocktails page
 function buildCocktailGrid() {
     for(var i = 0; i < allCocktails.length; i++) {
         var allCocktailsDiv = document.getElementById('allCocktailsList');
@@ -51,9 +51,7 @@ function buildCocktailGrid() {
     }
 }
 
-
-
-
+// Expand the popup for each cocktail when click
 function expandPopup(e) {
      console.log(e.target);
      console.log(this);

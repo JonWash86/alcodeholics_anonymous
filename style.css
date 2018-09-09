@@ -74,7 +74,7 @@ nav ul li {
     font-size: 25px;
 }
 .buttons {
-    width: 100%;    
+    width: 100%;
 }
 .yes {
     background-color: transparent;
@@ -117,6 +117,7 @@ nav ul li {
     text-align: center;
     padding: 10px 0;
 }
+<<<<<<< HEAD
 .hide {
     display: none;
 }
@@ -155,3 +156,14 @@ nav ul li {
 .imageAndTitle img {
     max-width: 100%;
 }
+=======
+
+
+#ingredientsCheck {
+  margin-left: 200px;
+  margin-right: 200px;
+  text-align: center;
+  line-height: 2em;
+}
+
+>>>>>>> 21b4c7fc5afcf1aa819472b5721ac005d7096622
