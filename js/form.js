@@ -10,6 +10,6 @@ function storeIngredients(){
     }
   }
   localStorage.setItem('indredients', options);
-
+  window.location.href="/results.html";
 
 }
