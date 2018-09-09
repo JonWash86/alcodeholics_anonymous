@@ -17,7 +17,6 @@ var cognacCocktails = [];
 
 var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];// changeed tequilakaCocktails to tequilacocktails
 
-
 vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liqueur', 'Milk'], ['coffee liqueur', 'milk'], 'white_russian.jpg', 'stir with ice cubes in a shaker'));
 vodkaCocktails.push(new Cocktail('Vodka', 'Sea Breeze', ['1.5 oz Vodka', '4 oz cranberry juice', '1 oz grapefruit juice'], ['cranberry juice', 'grapefruit juice'], 'sea_breeze.jpg', 'Combine vodka, cranberry juice, and grapefruit juice in a highball glass and stir to combine. Add ice. <br> Garnish with a wedge of lime.'));
 vodkaCocktails.push(new Cocktail('Vodka', 'Vodka Martini', ['3 oz Vodka', '1 oz dry vermouth', '1 cup ice cubes', '3 olives'], ['dry vermouth', 'olives'], 'vodka_martini.jpg', 'Combine vodka and dry vermouth in a cocktail mixing glass. Fill with ice and stir until chilled. Strain into a chilled martini glass.<br> Garnish with three olives on a toothpick.'));
