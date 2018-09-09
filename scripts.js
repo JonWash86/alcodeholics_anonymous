@@ -8,10 +8,11 @@ function Cocktail(spirit, name, ingredients, image, howToMake) {
 
 var vodkaCocktails = [];
 var rumCocktails = [];
-var ginkaCocktails = [];
+var ginCocktails = [];
 var tequilakaCocktails = [];
 var whiskeyCocktails = [];
 var cognacCocktails = [];
+
 var allCocktails = [vodkaCocktails, rumCocktails, ginkaCocktails, tequilacocktails, whiskeyCocktails, cognacCocktails];// changeed tequilakaCocktails to tequilacocktails
 
 
@@ -55,8 +56,7 @@ cognacCocktails.push(new Cocktail('cognac', 'Cognac Manhattan', ['2 oz cognac', 
 cognacCocktails.push(new Cocktail('cognac', 'Spiked cider', ['2 oz cognac', ' 4 oz apple cider', 'Orange peel'], 'spiked_cider.jpg', 'Combine the cider and Cognac over ice.<br> Twist the orange peel to release the oils over the top of the drinks.<br> Then sink it in.'));
 cognacCocktails.push(new Cocktail('cognac', 'Ode To Tiki', ['2 oz cognac', ' 1 oz orgeat', '1 oz lemon juice'], 'ode_to_tiki.jpg', 'Shake all ingredients over ice.<br> pour into a glass. <br> Enjoy!'));
 
-
-
+// Build each cocktail to the all cocktails page
 function buildCocktailGrid() {
     for(var i = 0; i < allCocktails.length; i++) {
         var allCocktailsDiv = document.getElementById('allCocktailsList');
@@ -70,7 +70,9 @@ function buildCocktailGrid() {
 
         for(var cocktailIndex = 0; cocktailIndex < allCocktails[i].length; cocktailIndex++) {
             var eachCocktail = document.createElement('div');
-            eachCocktail.setAttribute('class', 'cocktail')
+            eachCocktail.setAttribute('class', 'cocktail');
+            eachCocktail.addEventListener('click', expandPopup);
+            eachCocktail.dataset.drink = allCocktails[i][cocktailIndex].name;
             var cocktailImage = document.createElement('img');
             cocktailImage.setAttribute('src', 'img/' + allCocktails[i][cocktailIndex].image);
             var cocktailTitle = document.createElement('h2');
@@ -83,22 +85,64 @@ function buildCocktailGrid() {
     }
 }
 
-function expandCocktailPopup(e) {
-    var target = e.target;
-    console.log(target);
-    if(target == 'img') {
-        console.log('yes');
-    } else {
-        console.log('no');
+// Expand the popup for each cocktail when click
+function expandPopup(e) {
+     console.log(e.target);
+     console.log(this);
+    
+    for(var allCocktailsLoop = 0; allCocktailsLoop < allCocktails.length; allCocktailsLoop++) {
+        for(var eachSpiritLoop = 0; eachSpiritLoop < allCocktails[allCocktailsLoop].length; eachSpiritLoop++) {
+
+            if(this.dataset.drink === allCocktails[allCocktailsLoop][eachSpiritLoop].name) {
+            var popup = document.getElementById('popup');
+            var popupInner = document.createElement('div');
+            var exitPopup = document.createElement('a');
+            exitPopup.setAttribute('href', '#');
+            exitPopup.setAttribute('onclick', 'location.reload()');
+            exitPopup.setAttribute('class', 'exit-popup');
+            exitPopup.innerText = 'X';
+            popupInner.setAttribute('class', 'popup-inner');
+            popup.classList.remove('hide');
+            var imgAndTitle = document.createElement('div');
+            imgAndTitle.setAttribute('class', 'imageAndTitle');
+            var ingAndDesc = document.createElement('div');
+            ingAndDesc.setAttribute('class', 'ingAndDesc');
+            var imagePopup = document.createElement('img');
+            imagePopup.setAttribute('src', 'img/' + allCocktails[allCocktailsLoop][eachSpiritLoop].image);
+            var titlePopup = document.createElement('h2');
+            titlePopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].name;
+            var ingredientsTitle = document.createElement('h2');
+            ingredientsTitle.innerText = 'Ingredients';
+            var howToMakeTitle = document.createElement('h2');
+            howToMakeTitle.innerText = 'How To Make';
+            var ingPopup = document.createElement('ul');
+            for(var ingLoop = 0; ingLoop < allCocktails[allCocktailsLoop][eachSpiritLoop].ingredients.length; ingLoop++) {
+                var liPopup = document.createElement('li');
+                liPopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].ingredients[ingLoop];
+                ingPopup.appendChild(liPopup);
+            }
+            var howToMakePopup = document.createElement('p');
+            howToMakePopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].howToMake;
+
+            imgAndTitle.appendChild(imagePopup);
+            imgAndTitle.appendChild(titlePopup);
+            ingAndDesc.appendChild(ingredientsTitle);
+            ingAndDesc.appendChild(ingPopup);
+            ingAndDesc.appendChild(howToMakeTitle);
+            ingAndDesc.appendChild(howToMakePopup);
+            popupInner.appendChild(imgAndTitle);
+            popupInner.appendChild(ingAndDesc);
+            popupInner.appendChild(exitPopup);
+            popup.appendChild(popupInner);
+
+            }
+        }
     }
 }
 
+
 function allCocktailsPage() {
     buildCocktailGrid()
-    
 }
 
-allCocktailsPage();
-
-var cocktailDiv = document.getElementById('allCocktailsList');
-cocktailDiv.addEventListener('click',expandCocktailPopup);
+window.addEventListener('load', allCocktailsPage);
