@@ -45,42 +45,43 @@
       </nav>
     </section>
   </header>
-  <h1>CHOOSE YOUR SPIRIT</h1>
-  <div class="spirit-selection">
-    <label>
-      <input type="radio" name="spirit" value="cognac"/>
-      <figcaption>COGNAC</figcaption>
-      <img src="images/spirit_imgs/cognac.png"/>
-    </label>
-    <label>
-      <input type="radio" name="spirit" value="gin"/>
-      <figcaption>GIN</figcaption>
-      <img src="images/spirit_imgs/gin.png"/>
-    </label>
-    <label>
-      <input type="radio" name="spirit" value="rum"/>
-      <figcaption>RUM</figcaption>
-      <img src="images/spirit_imgs/rum.png"  />
-    </label>
-  </div>
+  <form>
+    <h1>CHOOSE YOUR SPIRIT</h1>
+    <div class="spirit-selection">
+      <label>
+        <figcaption>COGNAC</figcaption>
+        <input type="radio" name="spirit" value="cognac"/>
+        <img src="images/spirit_imgs/cognac.png"/>
+      </label>
+      <label>
+        <figcaption>GIN</figcaption>
+        <input type="radio" name="spirit" value="gin"/>
+        <img src="images/spirit_imgs/gin.png"/>
+      </label>
+      <label>
+        <figcaption>RUM</figcaption>
+        <input type="radio" name="spirit" value="rum"/>
+        <img src="images/spirit_imgs/rum.png"  />
+      </label>
+    </div>
 
-  <div class="spirit-selection">
-    <label>
-      <input type="radio" name="spirit" value="tequila"/>
-      <figcaption>TEQUILA</figcaption>
-      <img src="images/spirit_imgs/tequila.png" />
-    </label>
-    <label>
-      <figcaption>VODKA</figcaption>
-      <input type="radio" name="spirit" value="vodka"/>
-      <img src="images/spirit_imgs/vodka.png" />
-    </label>
-    <label>
-      <figcaption>WHISKEY</figcaption>
-      <input type="radio" name="spirit" value="whiskey"/>
-      <img src="images/spirit_imgs/whiskey.png" />
-    </label>
-  </div>
+    <div class="spirit-selection">
+      <label>
+        <figcaption>TEQUILA</figcaption>
+        <input type="radio" name="spirit" value="tequila"/>
+        <img src="images/spirit_imgs/tequila.png" />
+      </label>
+      <label>
+        <figcaption>VODKA</figcaption>
+        <input type="radio" name="spirit" value="vodka"/>
+        <img src="images/spirit_imgs/vodka.png" />
+      </label>
+      <label>
+        <figcaption>WHISKEY</figcaption>
+        <input type="radio" name="spirit" value="whiskey"/>
+        <img src="images/spirit_imgs/whiskey.png" />
+      </label>
+    </div>
     <fieldset id='ingredientsCheck'>
       <legend>What do you have lying around?</legend>
       <label><input type='checkbox' name='agave syrup' value='agave syrup'>Agave Syrup</label>&nbsp;
@@ -114,11 +115,9 @@
       <label><input type='checkbox' name='tonic water' value='tonic water'>Tonic Water</label>&nbsp;
       <label><input type='checkbox' name='triple sec' value='triple sec'>Triple Sec</label>&nbsp;
       <label><input type='checkbox' name='whipped cream' value='whipped cream'>Whipped Cream</label>
-
-
     </fieldset>
     <input type='button' value='Mix Something Up!' id='submitIngredients'>
-
+  </form>
 
 </body>
 </html>
