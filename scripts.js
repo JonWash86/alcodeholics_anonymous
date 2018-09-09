@@ -1,26 +1,28 @@
-function Cocktail(spirit, name, ingredients, image, howToMake) {
+function Cocktail(spirit, name, ingredients, rawIngredients, image, howToMake) {
     this.spirit = spirit;
     this.name = name;
     this.ingredients = ingredients;
+    this.rawIngredients= rawIngredients;
     this.image = image;
     this.howToMake = howToMake;
+    this.itemsMissing = [];
 }
 
 var vodkaCocktails = [];
 var rumCocktails = [];
 var ginCocktails = [];
-var tequilakaCocktails = [];
+var tequilaCocktails = [];
 var whiskeyCocktails = [];
 var cognacCocktails = [];
 
-var allCocktails = [vodkaCocktails, rumCocktails, ginkaCocktails, tequilacocktails, whiskeyCocktails, cognacCocktails];// changeed tequilakaCocktails to tequilacocktails
+var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];// changeed tequilakaCocktails to tequilacocktails
 
 
-vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'], 'cuba_libre.jpg', 'stir with ice cubes in a shaker'));
-vodkaCocktails.push(new Cocktail('Vodka', 'Sea Breeze', ['1.5 oz Vodka', '4 oz cranberry juice', '1 oz grapefruit juice'], 'sea_breeze.jpg', 'Combine vodka, cranberry juice, and grapefruit juice in a highball glass and stir to combine. Add ice. <br> Garnish with a wedge of lime.'));
-vodkaCocktails.push(new Cocktail('Vodka', 'Vodka Martini', ['3 oz Vodka', '1 oz dry vermouth', '1 cup ice cubes', '3 olives'], 'vodka_martini.jpg', 'Combine vodka and dry vermouth in a cocktail mixing glass. Fill with ice and stir until chilled. Strain into a chilled martini glass.<br> Garnish with three olives on a toothpick.'));
-vodkaCocktails.push(new Cocktail('Vodka', 'Cosmopolitan', ['1.5 oz Vodka', '1/4 oz  lime juice', '1/4 oz triple sec', '1/4 oz  cranberry juice', '1 cup ice', '1 lime wedge for garnish'], 'cuba_libre.jpg', 'Combine vodka, lime juice, triple sec, and cranberry juice in a cocktail shaker. Add ice, cover and shake until chilled. Strain into a chilled cocktail glass.<br> Garnish with a lime wedge.'));
-vodkaCocktails.push(new Cocktail('Vodka', 'Old Glory', ['2 oz Vodka', '8-10 blueberries', '1 oz fresh lemon juice', '1-2 oz Oregon Pinot Noir'], 'old_glory.jpg', 'Muddle fresh blueberries at the bottom of a double old fashioned glass and top with ice. Add vodka, lemon, and simple syrup to a mixing glass and shake vigorously until chilled and combined. Strain over ice and blueberries. Carefully pour wine over a spoon into the cocktail to create a red wine \"float.\"'));
+vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liqueur', 'Milk'], ['coffee liqueur', 'milk'], 'white_russian.jpg', 'stir with ice cubes in a shaker'));
+vodkaCocktails.push(new Cocktail('Vodka', 'Sea Breeze', ['1.5 oz Vodka', '4 oz cranberry juice', '1 oz grapefruit juice'], ['cranberry juice', 'grapefruit juice'], 'sea_breeze.jpg', 'Combine vodka, cranberry juice, and grapefruit juice in a highball glass and stir to combine. Add ice. <br> Garnish with a wedge of lime.'));
+vodkaCocktails.push(new Cocktail('Vodka', 'Vodka Martini', ['3 oz Vodka', '1 oz dry vermouth', '1 cup ice cubes', '3 olives'], ['dry vermouth', 'olives'], 'vodka_martini.jpg', 'Combine vodka and dry vermouth in a cocktail mixing glass. Fill with ice and stir until chilled. Strain into a chilled martini glass.<br> Garnish with three olives on a toothpick.'));
+vodkaCocktails.push(new Cocktail('Vodka', 'Cosmopolitan', ['1.5 oz Vodka', '1/4 oz  lime juice', '1/4 oz triple sec', '1/4 oz  cranberry juice', '1 cup ice', '1 lime wedge for garnish'],['lime', 'cranberry juice', 'triple sec'], 'cosmopolitan.jpg', 'Combine vodka, lime juice, triple sec, and cranberry juice in a cocktail shaker. Add ice, cover and shake until chilled. Strain into a chilled cocktail glass.<br> Garnish with a lime wedge.'));
+vodkaCocktails.push(new Cocktail('Vodka', 'Old Glory', ['2 oz Vodka', '8-10 blueberries', '1 oz fresh lemon juice', '1-2 oz Oregon Pinot Noir'], ['blueberries', 'lemon', 'pinot noir'], 'old_glory.jpg', 'Muddle fresh blueberries at the bottom of a double old fashioned glass and top with ice. Add vodka, lemon, and simple syrup to a mixing glass and shake vigorously until chilled and combined. Strain over ice and blueberries. Carefully pour wine over a spoon into the cocktail to create a red wine \"float.\"'));
 
 whiskeyCocktails.push(new Cocktail('Whiskey', 'Old Fashioned', ['1 oz Whiskey', '2 DASHES BITTERS', '1 SUGAR CUBE', 'ORANGE PEEL (FOR GARNISH'], 'old_glory.jpg', 'In an Old-Fashioned glass, muddle the sugar and bitters.<br>Add a large ice cube.<br>Add whiskey on top of the muddled sugar and stir with your bar spoon.<br>Garnish with a orange twist (if desired).'));
 
@@ -43,13 +45,13 @@ rumCocktails.push(new Cocktail('Rum', 'Daiquiri', ['2 oz Rum', '3/4 oz lime juic
 rumCocktails.push(new Cocktail('Rum', 'Dark n Stormy', ['1.5 oz Rum (dark)', 'ginger beer '], 'dark_n_stormy.jpg', 'Fill a tall glass with ice, and add the rum.<br>Top with the ginger beer.<br>Garnish with a lime wedge'));
 rumCocktails.push(new Cocktail('Rum', 'Rum Punch (serves 6)', ['1.5 oz Rum(light)', '1.5 oz orange juice', '.5 oz grapefruit juice', '1 oz cranberry juice'], 'rum_punch.jpg', 'Combine all ingredients in a pitcher and stir'));
 rumCocktails.push(new Cocktail('Rum', 'Rum and coke (Cuba Libre)', ['1 oz Rum(light)', ' 3 oz coke'], 'cuba_libre.jpg', 'Pour over ice, stir and enjoy!'));
-tequilacocktails.push(new Cocktail('Tequila', 'Horny Bull', ['2 oz tequila', ' 3 Orange juice'], 'horny_bull.jpg', 'Fill tall glass with ice and pour in tequila. Stir 2-3 times<br>Top off with OJ and serve.'));
-tequilacocktails.push(new Cocktail('Tequila', 'Juan Collins', ['4.5 oz tequila (Hornitos Plata Tequila recommended)', '1.5 oz lemon juice', '1 tsp. sugar', '9 oz. club soda'], 'juan_collins.jpg', 'Rim glass with salt or sugar.<br> Fill glass with ice. Add tequila and lime juice, and stir.<br> Top off with grapefruit juice and soda.<br> Stir again.<br> Garnish and serve.!'));
-tequilacocktails.push(new Cocktail('Tequila', 'Salty Chihuahua (with Lemonade)', ['1.5 oz tequila', ' 5 oz lemonade', 'splash of lime juice', 'Lime wedge, and coarse salt or sugar for garnish (optional)'], 'salty_chihuhuahu.jpg', 'Rim glass with salt or sugar.<br> Fill glass with ice.<br> Pour in tequila and lemonade.<br> Squeeze and drop in lime wedge for a splash of lime juice.<br> Stir and serve.'));
-tequilacocktails.push(new Cocktail('Tequila', 'Tequila Sunrise', ['1.5 oz tequila', ' 3 oz orange juice', '1/2 oz. grenadine syrup', 'Orange Slice/Maraschino Cherry (for garnish)'], 'tequila_sunrise.jpg', 'Add ice to tall glass and pour over tequila and orange juice.<br>Slowly add the grenadine which will sink to the bottom of the glass.<br>Garnish with an orange slice and a maraschino cherry.'));
-tequilacocktails.push(new Cocktail('Tequila', 'Tommy\'s margarita', ['2 oz tequila', ' 1 ounce lime juice (preferably squeezed)', '.5 oz agave syrup'], 'tommys_margarita.jpg', 'Combine all ingredients in a shaker over ice.<br> Shake to chill<br> Strain over fresh ice. <br>Salt garnish (optional).'));
-tequilacocktails.push(new Cocktail('Tequila', 'Tequila Negroni', ['1 oz tequila', ' 1 Campari', '1 sweet red vermouth'], 'tequila_negrroni.jpg', 'Combine all ingredients in a lowball glass with ice<br> Stir to chill.<br> Dilute slightly.'));
-tequilacocktails.push(new Cocktail('Tequila', 'Tequila soda', ['2 oz tequila', ' 3 oz club soda', 'Lime wedge'], 'tequila_soda.jpg', 'Pour the tequila over ice in a tall glass. <br> Fill with club soda. <br>  Squeeze in lime wedge, and enjoy.'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Horny Bull', ['2 oz tequila', ' 3 Orange juice'], 'horny_bull.jpg', 'Fill tall glass with ice and pour in tequila. Stir 2-3 times<br>Top off with OJ and serve.'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Juan Collins', ['4.5 oz tequila (Hornitos Plata Tequila recommended)', '1.5 oz lemon juice', '1 tsp. sugar', '9 oz. club soda'], 'juan_collins.jpg', 'Rim glass with salt or sugar.<br> Fill glass with ice. Add tequila and lime juice, and stir.<br> Top off with grapefruit juice and soda.<br> Stir again.<br> Garnish and serve.!'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Salty Chihuahua (with Lemonade)', ['1.5 oz tequila', ' 5 oz lemonade', 'splash of lime juice', 'Lime wedge, and coarse salt or sugar for garnish (optional)'], 'salty_chihuhuahu.jpg', 'Rim glass with salt or sugar.<br> Fill glass with ice.<br> Pour in tequila and lemonade.<br> Squeeze and drop in lime wedge for a splash of lime juice.<br> Stir and serve.'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Tequila Sunrise', ['1.5 oz tequila', ' 3 oz orange juice', '1/2 oz. grenadine syrup', 'Orange Slice/Maraschino Cherry (for garnish)'], 'tequila_sunrise.jpg', 'Add ice to tall glass and pour over tequila and orange juice.<br>Slowly add the grenadine which will sink to the bottom of the glass.<br>Garnish with an orange slice and a maraschino cherry.'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Tommy\'s margarita', ['2 oz tequila', ' 1 ounce lime juice (preferably squeezed)', '.5 oz agave syrup'], 'tommys_margarita.jpg', 'Combine all ingredients in a shaker over ice.<br> Shake to chill<br> Strain over fresh ice. <br>Salt garnish (optional).'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Tequila Negroni', ['1 oz tequila', ' 1 Campari', '1 sweet red vermouth'], 'tequila_negrroni.jpg', 'Combine all ingredients in a lowball glass with ice<br> Stir to chill.<br> Dilute slightly.'));
+tequilaCocktails.push(new Cocktail('Tequila', 'Tequila soda', ['2 oz tequila', ' 3 oz club soda', 'Lime wedge'], 'tequila_soda.jpg', 'Pour the tequila over ice in a tall glass. <br> Fill with club soda. <br>  Squeeze in lime wedge, and enjoy.'));
 cognacCocktails.push(new Cocktail('cognac', 'Sidecar', ['2 oz cognac', ' 1 oz lemon juice', '.5 oz simple syrup'], 'tequila_soda.jpg', 'Rim a coupe glass with sugar (or don’t… this is America, and we’re not gonna tell you what to do).<br> Shake all ingredients with ice until chilled.<br> Strains <br> Serve straight up.'));
 cognacCocktails.push(new Cocktail('cognac', 'Spiked Coffee', ['2 oz cognac', ' 4 ounces coffee', '1 ounce Kahlua'], 'spiked_coffee.jpg','Pour the Kahlua and Cognac into your coffee.<br> Stir and wake up.'));
 cognacCocktails.push(new Cocktail('cognac', 'Cognac Manhattan', ['2 oz cognac', ' 3/4 red vermouth', '2 dashes bitters'], 'cognac_manhattan.jpg', 'Stir all ingredients together with ice until chilled.<br> Strain into a glass.<br> Serve and enjoy.'));
@@ -89,7 +91,7 @@ function buildCocktailGrid() {
 function expandPopup(e) {
      console.log(e.target);
      console.log(this);
-    
+
     for(var allCocktailsLoop = 0; allCocktailsLoop < allCocktails.length; allCocktailsLoop++) {
         for(var eachSpiritLoop = 0; eachSpiritLoop < allCocktails[allCocktailsLoop].length; eachSpiritLoop++) {
 
