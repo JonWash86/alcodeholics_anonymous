@@ -1,5 +1,15 @@
 function storeIngredients(){
-  console.log(document.selectionForm.ingredient.value);
   localStorage.setItem('spirit', document.selectionForm.spirit.value);
-  localStorage.setItem('ingredients', document.selectionForm.ingredient.value);
+
+  var options = [];
+  var ingredients = document.getElementsByTagName('input');
+  for (var i =0; i < ingredients.length; i++){
+    var ingredient = ingredients[i];
+    if (ingredient.type == 'checkbox' && ingredient.checked){
+      options[options.length] = ingredient.value;
+    }
+  }
+  localStorage.setItem('indredients', options);
+
+
 }
