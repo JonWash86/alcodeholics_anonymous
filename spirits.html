@@ -7,71 +7,80 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .spirit-selection{
-            display: flex;
-            justify-content: center;
-            text-align: center;
+      .spirit-selection{
+          display: flex;
+          justify-content: center;
+          text-align: center;
+      }
 
+      img{
+        /* width: 210px; */
+        height: 315px;
+      }
 
-        }
-
-
-
-        img{
-
-            width: 210px;
-            height: 315px;
-        }
-        img:hover{
-            box-shadow:
-                1px 1px #505961,
-                2px 2px #505961,
-                3px 3px #505961;
+      img:hover{
+        box-shadow:
+          1px 1px #505961,
+          2px 2px #505961,
+          3px 3px #505961;
         -webkit-transform: translateX(-3px);
         transform: translateX(-3px);
+      }
 
-
-        }
-
-
-        h1{
-            text-align: center;
-        }
-
+      h1{
+          text-align: center;
+      }
 
     </style>
 </head>
 <body>
-    <h1>CHOOSE YOUR SPIRIT</h1>
-    <div class="spirit-selection">
-        <figure>
-            <figcaption>COGNAC</figcaption>
-            <img src="images/spirits_imgs/cognac.jpeg"  />
-        </figure>
-        <figure>
-            <figcaption>GIN</figcaption>
-            <img src="images/spirits_imgs/gin.jpg"  />
-        </figure>
-        <figure>
-            <figcaption>RUM</figcaption>
-            <img src="images/spirits_imgs/rum.jpg"  />
-        </figure>
-    </div>
+  <header>
+    <section>
+      <img src="http://i44.photobucket.com/albums/f35/idomosko/LogoMakr_5kAcgi_zpsvn3sdung.png" alt="">
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">All Cocktails</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <h1>CHOOSE YOUR SPIRIT</h1>
+  <div class="spirit-selection">
+    <label>
+      <input type="radio" name="spirit" value="cognac"/>
+      <figcaption>COGNAC</figcaption>
+      <img src="images/spirit_imgs/cognac.png"/>
+    </label>
+    <label>
+      <input type="radio" name="spirit" value="gin"/>
+      <figcaption>GIN</figcaption>
+      <img src="images/spirit_imgs/gin.png"/>
+    </label>
+    <label>
+      <input type="radio" name="spirit" value="rum"/>
+      <figcaption>RUM</figcaption>
+      <img src="images/spirit_imgs/rum.png"  />
+    </label>
+  </div>
 
-    <div class="spirit-selection">
-        <figure>
-            <figcaption>TEQUILA</figcaption>
-            <img src="images/spirits_imgs/tequila.jpg" />
-        </figure>
-        <figure>
-            <figcaption>VODKA</figcaption>
-            <img src="images/spirits_imgs/vodka.jpg" />
-        </figure>
-        <figure>
-            <figcaption>WHISKEY</figcaption>
-            <img src="images/spirits_imgs/whiskey2.jpeg" />
-        </figure>
-    </div>
+  <div class="spirit-selection">
+    <label>
+      <input type="radio" name="spirit" value="tequila"/>
+      <figcaption>TEQUILA</figcaption>
+      <img src="images/spirit_imgs/tequila.png" />
+    </label>
+    <label>
+      <figcaption>VODKA</figcaption>
+      <input type="radio" name="spirit" value="vodka"/>
+      <img src="images/spirit_imgs/vodka.png" />
+    </label>
+    <label>
+      <figcaption>WHISKEY</figcaption>
+      <input type="radio" name="spirit" value="whiskey"/>
+      <img src="images/spirit_imgs/whiskey.png" />
+    </label>
+  </div>
     <fieldset id='ingredientsCheck'>
       <legend>What do you have lying around?</legend>
       <label><input type='checkbox' name='agave syrup' value='agave syrup'>Agave Syrup</label>&nbsp;
@@ -108,7 +117,7 @@
 
 
     </fieldset>
-
+    <input type='button' value='Mix Something Up!' id='submitIngredients'>
 
 
 </body>
