@@ -74,7 +74,7 @@ nav ul li {
     font-size: 25px;
 }
 .buttons {
-    width: 100%;    
+    width: 100%;
 }
 .yes {
     background-color: transparent;
@@ -111,3 +111,12 @@ nav ul li {
     text-align: center;
     padding: 10px 0;
 }
+
+
+#ingredientsCheck {
+  margin-left: 200px;
+  margin-right: 200px;
+  text-align: center;
+  line-height: 2em;
+}
+
