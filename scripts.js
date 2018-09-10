@@ -5,7 +5,7 @@ function Cocktail(spirit, name, ingredients, rawIngredients, image, howToMake) {
     this.rawIngredients= rawIngredients;
     this.image = image;
     this.howToMake = howToMake;
-    this.itemsMissing = [];
+    this.itemsMissing = 100;
 }
 
 var vodkaCocktails = [];
