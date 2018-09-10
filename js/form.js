@@ -9,6 +9,7 @@ function storeIngredients(){
       options[options.length] = ingredient.value;
     }
   }
+
   localStorage.setItem('ingredients', JSON.stringify(options));
   // window.location.href="/results.html"; This line is a comment until site navigation is ironed out.
 }
@@ -28,4 +29,25 @@ function scoreMatch(){
       }
     }
   }
+
 }
+
+
+//jc code
+//this code should run when user hits submit button
+function localIngredients() {
+  
+  var localSpirit = localStorage.getItem('spirit');   
+  localStorage.getItem('ingredients');   
+  if (localSpirit === 'localSpirit') {
+    allCocktails.sort(function (a, b) {
+      return a.score - b.score;
+    });
+
+    }
+  }
+
+
+
+window.addEventListener('load', localIngredients);
+
