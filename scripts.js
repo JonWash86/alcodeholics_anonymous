@@ -1,13 +1,12 @@
-function Cocktail(spirit, name, ingredients, image, howToMake, rawIngredients) {
+function Cocktail(spirit, name, ingredients, rawIngredients, image, howToMake) {
+
     this.spirit = spirit;
     this.name = name;
     this.ingredients = ingredients;
+    this.rawIngredients= rawIngredients;
     this.image = image;
     this.howToMake = howToMake;
-    this.itemsMissing = [];
-    this.rawIngredients = rawIngredients;
     this.score = 100;
-
 
 }
 //goal: sort all vodka cocktail from 0 items missing in order 
@@ -64,7 +63,8 @@ tequilaCocktails.push(new Cocktail('Tequila', 'Tequila Sunrise', ['1.5 oz tequil
 tequilaCocktails.push(new Cocktail('Tequila', 'Tommy\'s margarita', ['2 oz tequila', ' 1 ounce lime juice (preferably squeezed)', '.5 oz agave syrup'], 'tommys_margarita.jpg', 'Combine all ingredients in a shaker over ice.<br> Shake to chill<br> Strain over fresh ice. <br>Salt garnish (optional).'));
 tequilaCocktails.push(new Cocktail('Tequila', 'Tequila Negroni', ['1 oz tequila', ' 1 Campari', '1 sweet red vermouth'], 'tequila_negrroni.jpg', 'Combine all ingredients in a lowball glass with ice<br> Stir to chill.<br> Dilute slightly.'));
 tequilaCocktails.push(new Cocktail('Tequila', 'Tequila soda', ['2 oz tequila', ' 3 oz club soda', 'Lime wedge'], 'tequila_soda.jpg', 'Pour the tequila over ice in a tall glass. <br> Fill with club soda. <br>  Squeeze in lime wedge, and enjoy.'));
-cognacCocktails.push(new Cocktail('Cognac', 'Sidecar', ['2 oz cognac', ' 1 oz lemon juice', '.5 oz simple syrup'], 'tequila_soda.jpg', 'Rim a coupe glass with sugar (or don’t… this is America, and we’re not gonna tell you what to do).<br> Shake all ingredients with ice until chilled.<br> Strains <br> Serve straight up.'));
+cognacCocktails.push(new Cocktail('cognac', 'Sidecar', ['2 oz cognac', ' 1 oz lemon juice', '.5 oz simple syrup'], 'tequila_soda.jpg', 'Rim a coupe glass with sugar (or don’t… this is America, and we’re not gonna tell you what to do).<br> Shake all ingredients with ice until chilled.<br> Strains <br> Serve straight up.'));
+
 cognacCocktails.push(new Cocktail('cognac', 'Spiked Coffee', ['2 oz cognac', ' 4 ounces coffee', '1 ounce Kahlua'], 'spiked_coffee.jpg','Pour the Kahlua and Cognac into your coffee.<br> Stir and wake up.'));
 cognacCocktails.push(new Cocktail('cognac', 'Cognac Manhattan', ['2 oz cognac', ' 3/4 red vermouth', '2 dashes bitters'], 'cognac_manhattan.jpg', 'Stir all ingredients together with ice until chilled.<br> Strain into a glass.<br> Serve and enjoy.'));
 cognacCocktails.push(new Cocktail('cognac', 'Spiked cider', ['2 oz cognac', ' 4 oz apple cider', 'Orange peel'], 'spiked_cider.jpg', 'Combine the cider and Cognac over ice.<br> Twist the orange peel to release the oils over the top of the drinks.<br> Then sink it in.'));
@@ -103,7 +103,7 @@ function buildCocktailGrid() {
 function expandPopup(e) {
      console.log(e.target);
      console.log(this);
-    
+
     for(var allCocktailsLoop = 0; allCocktailsLoop < allCocktails.length; allCocktailsLoop++) {
         for(var eachSpiritLoop = 0; eachSpiritLoop < allCocktails[allCocktailsLoop].length; eachSpiritLoop++) {
 

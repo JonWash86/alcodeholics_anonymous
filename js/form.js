@@ -1,6 +1,6 @@
 function storeIngredients(){
-  localStorage.setItem('spirit', document.selectionForm.spirit.value);
-
+  var spiritSelection = document.selectionForm.spirit.value
+  localStorage.setItem('spirit', JSON.stringify(spiritSelection));
   var options = [];
   var ingredients = document.getElementsByTagName('input');
   for (var i =0; i < ingredients.length; i++){
@@ -9,10 +9,27 @@ function storeIngredients(){
       options[options.length] = ingredient.value;
     }
   }
-   localStorage.setItem('ingredients', options); // 
-  // window.location.href="/results.html";
 
- 
+  localStorage.setItem('ingredients', JSON.stringify(options));
+  // window.location.href="/results.html"; This line is a comment until site navigation is ironed out.
+}
+
+function scoreMatch(){
+  var storedSpirit = JSON.parse(localStorage.getItem('spirit'));
+  var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
+  for (var i = 0; i < vodkaCocktails.length; i++){
+    if (storedSpirit = vodkaCocktails[i].spirit){
+      var recipeClone = vodkaCocktails[i].rawIngredients.slice(0);
+      for (var number = 0; number < storedIngredients.length; number++){
+        var match = recipeClone.indexOf(storedIngredients[number])
+        if (match >= 0){
+          recipeClone.splice((match), 1);
+        };
+        vodkaCocktails[i].score = recipeClone.length;
+      }
+    }
+  }
+
 }
 
 
