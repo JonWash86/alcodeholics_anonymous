@@ -14,13 +14,13 @@ function storeIngredients(){
 }
 
 function scoreMatch(){
-  console.log('this ran on its own!')
   var storedSpirit = JSON.parse(localStorage.getItem('spirit'));
   var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
-  for (var i = 0; i < vodkaCocktails.length; i++){
-    if (storedSpirit = vodkaCocktails[i].spirit){
-      var recipeClone = vodkaCocktails[i].rawIngredients.slice();
-      console.log('the recipe clone for ' + vodkaCocktails[i].name + ' is ' + recipeClone);
+  for (var i = 0; i < allCocktailList.length; i++){
+    if (storedSpirit === allCocktailList[i].spirit){
+      console.log('The spirit of ' + allCocktailList[i].name + ' matches the user input of ' + storedSpirit)
+      var recipeClone = allCocktailList[i].rawIngredients.slice();
+      console.log('the recipe clone for ' + allCocktailList[i].name + ' is ' + recipeClone);
       for (var number = 0; number < storedIngredients.length; number++){
         // console.log('the user-submitted ingredient being examined right now is ' + storedIngredients[number]);
         var match = recipeClone.indexOf(storedIngredients[number])
@@ -28,9 +28,9 @@ function scoreMatch(){
           console.log('matched index ' + recipeClone.indexOf(storedIngredients[number]));
           recipeClone.splice((match), 1);
         };
-        vodkaCocktails[i].score = recipeClone.length;
+        allCocktailList[i].score = recipeClone.length;
         console.log('the remaining ingredients number at ' + recipeClone.length);
-      }
-    }
-  }
-}
+      };
+    };
+  };
+};
