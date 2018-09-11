@@ -20,6 +20,14 @@ var tequilaCocktails = [];
 var whiskeyCocktails = [];
 var cognacCocktails = [];
 
+
+var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
+
+var cocktailRecipes = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};
+
+
+vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'],  'stir with ice cubes in a shaker','cuba_libre.jpg', ['Coffee liquor', 'Milk']));
+
 // oirignal code replaced with line 26 in order to be able to list in order.
 var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
 

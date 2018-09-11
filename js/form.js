@@ -28,6 +28,47 @@ function scoreMatch(){
           console.log('matched index ' + recipeClone.indexOf(storedIngredients[number]));
           recipeClone.splice((match), 1);
         };
+
+        vodkaCocktails[i].score = recipeClone.length;
+      }
+    }
+  }
+
+}
+
+
+//jc code
+//this code should run when user hits submit button
+function listCocktails() {
+  
+  var localSpirit = localStorage.getItem('spirit');   
+  cocktailRecipes[localSpirit].sort(function (a, b) {
+      return a.score - b.score;
+    });
+
+    for(var cocktailIndex = 0; cocktailIndex < allCocktails[i].length; cocktailIndex++) {
+      var eachCocktail = document.createElement('div');
+      eachCocktail.setAttribute('class', 'cocktail');
+      eachCocktail.addEventListener('click', expandPopup);
+      eachCocktail.dataset.drink = allCocktails[i][cocktailIndex].name;
+      var cocktailImage = document.createElement('img');
+      cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + allCocktails[i][cocktailIndex].image);
+      var cocktailTitle = document.createElement('h2');
+      cocktailTitle.innerText = allCocktails[i][cocktailIndex].name;
+      eachCocktail.appendChild(cocktailImage);
+      eachCocktail.appendChild(cocktailTitle);
+      createSpiritDiv.appendChild(eachCocktail);
+  }
+    
+
+    
+  }
+
+
+
+window.addEventListener('load', localIngredients);
+
+
         allCocktailList[i].score = recipeClone.length;
         console.log('the remaining ingredients number at ' + recipeClone.length);
       };
