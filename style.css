@@ -1,3 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+
+/* font-family: 'Slabo 27px', serif;
+font-family: 'Noticia Text', serif; */
+
+nav{
+    font-family: 'Fugaz One', cursive;
+    
+}
+
 .homepage {
     margin: 0;
     background-image: url(https://www.inspiredtaste.net/wp-content/uploads/2012/10/Southside-Cocktail-Recipe-1-1200.jpg);
@@ -181,4 +192,6 @@ label input:checked + img{
   text-align: center;
   line-height: 2em;
 }
+
+
 
