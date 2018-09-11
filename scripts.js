@@ -1,16 +1,16 @@
-function Cocktail(spirit, name, ingredients, rawIngredients, image, howToMake) {
+function Cocktail(spirit, name, ingredients, image, howToMake, rawIngredients) {
 
     this.spirit = spirit;
     this.name = name;
     this.ingredients = ingredients;
-    this.rawIngredients= rawIngredients;
     this.image = image;
     this.howToMake = howToMake;
     this.score = 100;
+    this.rawIngredients= rawIngredients;
 
 }
-//goal: sort all vodka cocktail from 0 items missing in order 
-//loop through rawIngredients, if 100% match display first 
+//goal: sort all vodka cocktail from 0 items missing in order
+//loop through rawIngredients, if 100% match display first
 
 var vodkaCocktails = [];
 var rumCocktails = [];
@@ -25,19 +25,20 @@ var cognacCocktails = [];
 var allCocktails = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};// changeed tequilakaCocktails to tequilacocktails
 
 
-vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'], 'cuba_libre.jpg', 'stir with ice cubes in a shaker', ['Coffee liquor', 'Milk']));
+vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'], 'cuba_libre.jpg', 'stir with ice cubes in a shaker', ['coffee liqueur', 'heavy cream']));
 
 vodkaCocktails.push(new Cocktail('Vodka', 'Sea Breeze', ['1.5 oz Vodka', '4 oz cranberry juice', '1 oz grapefruit juice'], 'sea_breeze.jpg', 'Combine vodka, cranberry juice, and grapefruit juice in a highball glass and stir to combine. Add ice. <br> Garnish with a wedge of lime.',[ 'cranberry juice', 'grapefruit juice']));
 
 vodkaCocktails.push(new Cocktail('Vodka', 'Vodka Martini', ['3 oz Vodka', '1 oz dry vermouth', '3 olives'], 'vodka_martini.jpg', 'Combine vodka and dry vermouth in a cocktail mixing glass. Fill with ice and stir until chilled. Strain into a chilled martini glass.<br> Garnish with three olives on a toothpick.', [ 'dry vermouth', 'olives']));
 
-vodkaCocktails.push(new Cocktail('Vodka', 'Cosmopolitan', ['1.5 oz Vodka', '1/4 oz  lime juice', '1/4 oz triple sec', '1/4 oz  cranberry juice', '1 cup ice', '1 lime wedge for garnish'], 'cuba_libre.jpg', 'Combine vodka, lime juice, triple sec, and cranberry juice in a cocktail shaker. Add ice, cover and shake until chilled. Strain into a chilled cocktail glass.<br> Garnish with a lime wedge.'));
+vodkaCocktails.push(new Cocktail('Vodka', 'Cosmopolitan', ['1.5 oz Vodka', '1/4 oz  lime juice', '1/4 oz triple sec', '1/4 oz  cranberry juice', '1 cup ice', '1 lime wedge for garnish'], 'cuba_libre.jpg', 'Combine vodka, lime juice, triple sec, and cranberry juice in a cocktail shaker. Add ice, cover and shake until chilled. Strain into a chilled cocktail glass.<br> Garnish with a lime wedge.', ['lime', 'triple sec', 'cranberry juice']));
 
-vodkaCocktails.push(new Cocktail('Vodka', 'Old Glory', ['2 oz Vodka', '8-10 blueberries', '1 oz fresh lemon juice', '1-2 oz Oregon Pinot Noir'], 'old_glory.jpg', 'Muddle fresh blueberries at the bottom of a double old fashioned glass and top with ice. Add vodka, lemon, and simple syrup to a mixing glass and shake vigorously until chilled and combined. Strain over ice and blueberries. Carefully pour wine over a spoon into the cocktail to create a red wine \"float.\"', [ 'lime juice', 'triple sec', 'cranberry juice',  'lime']));
+vodkaCocktails.push(new Cocktail('Vodka', 'Old Glory', ['2 oz Vodka', '8-10 blueberries', '1 oz fresh lemon juice', '1-2 oz Oregon Pinot Noir'], 'old_glory.jpg', 'Muddle fresh blueberries at the bottom of a double old fashioned glass and top with ice. Add vodka, lemon, and simple syrup to a mixing glass and shake vigorously until chilled and combined. Strain over ice and blueberries. Carefully pour wine over a spoon into the cocktail to create a red wine \"float.\"', ['triple sec', 'cranberry juice',  'lime']));
 
 whiskeyCocktails.push(new Cocktail('Whiskey', 'Old Fashioned', ['1 oz Whiskey', '2 DASHES BITTERS', '1 SUGAR CUBE', 'ORANGE PEEL (FOR GARNISH'], 'old_glory.jpg', 'In an Old-Fashioned glass, muddle the sugar and bitters.<br>Add a large ice cube.<br>Add whiskey on top of the muddled sugar and stir with your bar spoon.<br>Garnish with a orange twist (if desired).'));
 
 whiskeyCocktails.push(new Cocktail('Whiskey', 'Manhattan', ['2 oz Whiskey', '1 oz sweet vermouth', '2 dashes orange bitters', '1 dash angostura bitters', '1 cherry'], 'manhattan.jpg', 'Stir all ingredients with ice and strain into a chilled coupe glass.<br>Serve with a brandied cherry.'));
+
 whiskeyCocktails.push(new Cocktail('Whiskey', 'Irish Coffee', ['2 oz Irish Whiskey', '4 OZ coffee', '.5 oz simple syrup', 'whipped cream', 'fresh grated nutmeg(optional)'], 'irish_coffee.jpg', 'Pour the simple syrup and whiskey into a glass mug, then add the coffee.<br> Fill the small half of a cocktail tin halfway with heavy cream. Shake the cream in the shaker until it is almost solid (you’ll be able to hear the difference).<br>Top the coffee off with your shaken cream. If done correctly the whipped cream will sit on top of the coffee and create two distinct layers.<br>Using a microplane, grate fresh nutmeg on top of the cream and serve.'));
 whiskeyCocktails.push(new Cocktail('Whiskey', 'Whiskey and Coke', ['2 oz Whiskey', '4 oz Coke'], "whiskey_coke.jpg", 'pour over glass of ice and enjoy' ));
 whiskeyCocktails.push(new Cocktail('Whiskey', 'Loud Beat', ['1.5 oz Whiskey', '1 Sugar Cube', 'Mint ', '4 oz simple Syrup'], 'loud_beat.jpg', 'Shake with crushed ice'));
