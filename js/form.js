@@ -35,16 +35,29 @@ function scoreMatch(){
 
 //jc code
 //this code should run when user hits submit button
-function localIngredients() {
+function listCocktails() {
   
   var localSpirit = localStorage.getItem('spirit');   
-  localStorage.getItem('ingredients');   
-  if (localSpirit === 'localSpirit') {
-    allCocktails.sort(function (a, b) {
+  cocktailRecipes[localSpirit].sort(function (a, b) {
       return a.score - b.score;
     });
 
-    }
+    for(var cocktailIndex = 0; cocktailIndex < allCocktails[i].length; cocktailIndex++) {
+      var eachCocktail = document.createElement('div');
+      eachCocktail.setAttribute('class', 'cocktail');
+      eachCocktail.addEventListener('click', expandPopup);
+      eachCocktail.dataset.drink = allCocktails[i][cocktailIndex].name;
+      var cocktailImage = document.createElement('img');
+      cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + allCocktails[i][cocktailIndex].image);
+      var cocktailTitle = document.createElement('h2');
+      cocktailTitle.innerText = allCocktails[i][cocktailIndex].name;
+      eachCocktail.appendChild(cocktailImage);
+      eachCocktail.appendChild(cocktailTitle);
+      createSpiritDiv.appendChild(eachCocktail);
+  }
+    
+
+    
   }
 
 

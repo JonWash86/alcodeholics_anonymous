@@ -19,13 +19,13 @@ var tequilaCocktails = [];
 var whiskeyCocktails = [];
 var cognacCocktails = [];
 
-//oirignal code/ replaced with line 26 in order to be able to list in order.
-// var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];// changeed tequilakaCocktails to tequilacocktails
 
-var allCocktails = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};// changeed tequilakaCocktails to tequilacocktails
+var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
+
+var cocktailRecipes = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};
 
 
-vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'], 'cuba_libre.jpg', 'stir with ice cubes in a shaker', ['Coffee liquor', 'Milk']));
+vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'],  'stir with ice cubes in a shaker','cuba_libre.jpg', ['Coffee liquor', 'Milk']));
 
 vodkaCocktails.push(new Cocktail('Vodka', 'Sea Breeze', ['1.5 oz Vodka', '4 oz cranberry juice', '1 oz grapefruit juice'], 'sea_breeze.jpg', 'Combine vodka, cranberry juice, and grapefruit juice in a highball glass and stir to combine. Add ice. <br> Garnish with a wedge of lime.',[ 'cranberry juice', 'grapefruit juice']));
 
