@@ -6,6 +6,7 @@ function Cocktail(spirit, name, ingredients, image, howToMake, rawIngredients) {
     this.image = image;
     this.howToMake = howToMake;
     this.score = 100;
+    this.breakSteps = this.howToMake.split('.');
     this.rawIngredients= rawIngredients;
 
 }
@@ -19,11 +20,10 @@ var tequilaCocktails = [];
 var whiskeyCocktails = [];
 var cognacCocktails = [];
 
-//oirignal code/ replaced with line 26 in order to be able to list in order.
-// var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];// changeed tequilakaCocktails to tequilacocktails
+// oirignal code replaced with line 26 in order to be able to list in order.
+var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
 
-var allCocktails = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};// changeed tequilakaCocktails to tequilacocktails
-
+// var allCocktails = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};// changeed tequilakaCocktails to tequilacocktails
 
 vodkaCocktails.push(new Cocktail('Vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'], 'cuba_libre.jpg', 'stir with ice cubes in a shaker', ['coffee liqueur', 'heavy cream']));
 
@@ -72,6 +72,7 @@ cognacCocktails.push(new Cocktail('Cognac', 'Cognac Manhattan', ['2 oz cognac', 
 cognacCocktails.push(new Cocktail('Cognac', 'Spiked cider', ['2 oz cognac', ' 4 oz apple cider', 'Orange peel'], 'spiked_cider.jpg', 'Combine the cider and Cognac over ice.<br> Twist the orange peel to release the oils over the top of the drinks.<br> Then sink it in.', ['apple cider', 'orange']));
 cognacCocktails.push(new Cocktail('Cognac', 'Ode To Tiki', ['2 oz cognac', ' 1 oz orgeat', '1 oz lemon juice'], 'ode_to_tiki.jpg', 'Shake all ingredients over ice.<br> pour into a glass. <br> Enjoy!', ['orgeat', 'lemon']));
 
+
 // Build each cocktail to the all cocktails page
 function buildCocktailGrid() {
     for(var i = 0; i < allCocktails.length; i++) {
@@ -114,9 +115,9 @@ function expandPopup(e) {
             var popupInner = document.createElement('div');
             var exitPopup = document.createElement('a');
             exitPopup.setAttribute('href', '#');
-            exitPopup.setAttribute('onclick', 'location.reload()');
             exitPopup.setAttribute('class', 'exit-popup');
             exitPopup.innerText = 'X';
+            exitPopup.setAttribute('onclick', 'location.reload()');
             popupInner.setAttribute('class', 'popup-inner');
             popup.classList.remove('hide');
             var imgAndTitle = document.createElement('div');
@@ -137,8 +138,14 @@ function expandPopup(e) {
                 liPopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].ingredients[ingLoop];
                 ingPopup.appendChild(liPopup);
             }
-            var howToMakePopup = document.createElement('p');
-            howToMakePopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].howToMake;
+            var howToMakePopup = document.createElement('ol');
+            for(var i = 0; i < allCocktails[allCocktailsLoop][eachSpiritLoop].breakSteps.length; i++) {
+                var stepLi = document.createElement('li');
+                stepLi.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].breakSteps[i] + '.';
+                howToMakePopup.appendChild(stepLi);
+            }
+            
+            // howToMakePopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].howToMake;
 
             imgAndTitle.appendChild(imagePopup);
             imgAndTitle.appendChild(titlePopup);
@@ -151,7 +158,8 @@ function expandPopup(e) {
             popupInner.appendChild(exitPopup);
             popup.appendChild(popupInner);
 
-            }
+            };
+
         }
     }
 }
