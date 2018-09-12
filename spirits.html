@@ -9,6 +9,7 @@
     <script type='text/javascript' src='js/form.js'></script>
 
     <script type='text/javascript' src='scripts.js'></script>
+    <script type='text/javascript' src='js/cocktails.js'></script>
     <style>
       .spirit-selection{
           display: flex;
@@ -88,7 +89,9 @@
     </div>
     <fieldset id='ingredientsCheck'>
       <legend>What do you have lying around?</legend>
-      <label><input type='checkbox' name='agave syrup' value='agave syrup'>Agave Syrup</label>&nbsp;
+      <div id='checkBoxSpace'>
+      </div>
+      <!-- <label><input type='checkbox' name='agave syrup' value='agave syrup'>Agave Syrup</label>&nbsp;
       <label><input type='checkbox' name='ingredient' value='coffee'>Coffee</label>&nbsp;
       <label><input type='checkbox' name='ingredient' value='cranberry juice'>Cranberry Juice</label>&nbsp;
       <label><input type='checkbox' name='ingredient' value='dry vermouth'>Dry Vermouth</label>&nbsp;
@@ -118,10 +121,9 @@
       <label><input type='checkbox' name='sweet vermouth' value='sweet vermouth'>Sweet Vermouth</label>&nbsp;
       <label><input type='checkbox' name='tonic water' value='tonic water'>Tonic Water</label>&nbsp;
       <label><input type='checkbox' name='triple sec' value='triple sec'>Triple Sec</label>&nbsp;
-      <label><input type='checkbox' name='whipped cream' value='whipped cream'>Whipped Cream</label>
+      <label><input type='checkbox' name='whipped cream' value='whipped cream'>Whipped Cream</label> -->
     </fieldset>
     <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
-    <input type='button' value='Compare!' id='compareingredients' onclick='scoreMatch()'>
   </form>
   <script type='text/javascript' src='js/form.js'></script>
 

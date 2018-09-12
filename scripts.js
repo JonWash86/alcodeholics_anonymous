@@ -152,7 +152,7 @@ function expandPopup(e) {
                 stepLi.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].breakSteps[i] + '.';
                 howToMakePopup.appendChild(stepLi);
             }
-            
+
             // howToMakePopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].howToMake;
 
             imgAndTitle.appendChild(imagePopup);
