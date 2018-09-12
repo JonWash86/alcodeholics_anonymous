@@ -177,6 +177,6 @@ function allCocktailsPage() {
     buildCocktailGrid()
 }
 
-window.addEventListener('load', allCocktailsPage);
+// window.addEventListener('load', allCocktailsPage);
 
 var allCocktailList = vodkaCocktails.concat(rumCocktails, ginCocktails, whiskeyCocktails, tequilaCocktails, cognacCocktails);

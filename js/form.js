@@ -30,7 +30,7 @@ function scoreMatch(){
           recipeClone.splice((match), 1);
         };
 
-        vodkaCocktails[i].score = recipeClone.length;
+        // vodkaCocktails[i].score = recipeClone.length;
         allCocktailList[i].score = recipeClone.length;
         console.log('the remaining ingredients number at ' + recipeClone.length);
         
@@ -49,9 +49,10 @@ function listCocktails() {
   cocktailRecipes[localSpirit].sort(function (a, b) {
     return a.score - b.score;
     
+    
   });
   console.log(cocktailRecipes[localSpirit]);  
-    for(var cocktailIndex = 0; cocktailIndex < localSpirit.length; cocktailIndex++) {
+    for(var cocktailIndex = 0; cocktailIndex < cocktailRecipes[localSpirit].length; cocktailIndex++) {
         // var eachCocktail = document.createElement('div');
         var resultsSpace = document.getElementById('resultsSpace');
         var eachCocktail = document.createElement('div');
