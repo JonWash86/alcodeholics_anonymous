@@ -34,7 +34,6 @@ function buildBoxes(){
       cell.innerHTML = checkTest;
       row.appendChild(cell);
     }
-
     if (allRaw[i +2]!= undefined){
       var checkTest = '<label><input type=\'checkbox\' name=\'' + allRaw[i+2] + '\' value=\'' + allRaw[i+2] + '\'>' + allRaw[i+2] +' </label>&nbsp;';
       var cell = document.createElement('td');
@@ -42,7 +41,6 @@ function buildBoxes(){
       cell.innerHTML = checkTest;
       row.appendChild(cell);
     }
-
     if (allRaw[i +3]!= undefined){
       var checkTest = '<label><input type=\'checkbox\' name=\'' + allRaw[i+3] + '\' value=\'' + allRaw[i+3] + '\'>' + allRaw[i+3] +' </label>&nbsp;';
       var cell = document.createElement('td');
@@ -50,7 +48,6 @@ function buildBoxes(){
       cell.innerHTML = checkTest;
       row.appendChild(cell);
     }
-
     if (allRaw[i +4]!= undefined){
       console.log('checking out ' + allRaw[i +4])
       var checkTest = '<label><input type=\'checkbox\' name=\'' + allRaw[i+4] + '\' value=\'' + allRaw[i+4] + '\'>' + allRaw[i+4] +' </label>&nbsp;';
