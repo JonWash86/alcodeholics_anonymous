@@ -1,6 +1,6 @@
 function storeIngredients(){
   var spiritSelection = document.selectionForm.spirit.value
-  localStorage.setItem('spirit', JSON.stringify(spiritSelection));
+  localStorage.setItem('spirit', spiritSelection);
   var options = [];
   var ingredients = document.getElementsByTagName('input');
   for (var i =0; i < ingredients.length; i++){
@@ -14,7 +14,8 @@ function storeIngredients(){
 }
 
 function scoreMatch(){
-  var storedSpirit = JSON.parse(localStorage.getItem('spirit'));
+  // var storedSpirit = JSON.parse(localStorage.getItem('spirit')); had to remove JSON in order for score to work
+  var storedSpirit = localStorage.getItem('spirit');
   var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
   for (var i = 0; i < allCocktailList.length; i++){
     if (storedSpirit === allCocktailList[i].spirit){
@@ -30,6 +31,9 @@ function scoreMatch(){
         };
 
         vodkaCocktails[i].score = recipeClone.length;
+        allCocktailList[i].score = recipeClone.length;
+        console.log('the remaining ingredients number at ' + recipeClone.length);
+        
       }
     }
   }
@@ -41,37 +45,46 @@ function scoreMatch(){
 //this code should run when user hits submit button
 function listCocktails() {
   
-  var localSpirit = localStorage.getItem('spirit');   
+  var localSpirit = localStorage.getItem('spirit').toLocaleLowerCase(); 
   cocktailRecipes[localSpirit].sort(function (a, b) {
-      return a.score - b.score;
-    });
+    return a.score - b.score;
+    
+  });
+  console.log(cocktailRecipes[localSpirit]);  
+    for(var cocktailIndex = 0; cocktailIndex < localSpirit.length; cocktailIndex++) {
+        // var eachCocktail = document.createElement('div');
+        var resultsSpace = document.getElementById('resultsSpace');
+        var eachCocktail = document.createElement('div');
+        eachCocktail.setAttribute('class', 'cocktail');
+        eachCocktail.addEventListener('click', expandPopup);
+        var cocktailObject = cocktailRecipes[localSpirit][cocktailIndex];
 
-    for(var cocktailIndex = 0; cocktailIndex < allCocktails[i].length; cocktailIndex++) {
-      var eachCocktail = document.createElement('div');
-      eachCocktail.setAttribute('class', 'cocktail');
-      eachCocktail.addEventListener('click', expandPopup);
-      eachCocktail.dataset.drink = allCocktails[i][cocktailIndex].name;
-      var cocktailImage = document.createElement('img');
-      cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + allCocktails[i][cocktailIndex].image);
-      var cocktailTitle = document.createElement('h2');
-      cocktailTitle.innerText = allCocktails[i][cocktailIndex].name;
-      eachCocktail.appendChild(cocktailImage);
-      eachCocktail.appendChild(cocktailTitle);
-      createSpiritDiv.appendChild(eachCocktail);
-  }
+        console.log(cocktailObject);
+        var cocktailImage = document.createElement('img');
+        cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + cocktailObject.image);
+        var cocktailTitle = document.createElement('h2');
+        cocktailTitle.innerText = cocktailObject.name;
+        resultsSpace.appendChild(eachCocktail);
+        eachCocktail.appendChild(cocktailImage);
+        eachCocktail.appendChild(cocktailTitle);
+    }
+  
+
+}
+
     
 
+
+
     
-  }
+ 
 
 
 
-window.addEventListener('load', localIngredients);
+// window.addEventListener('load', listCocktails);
 
 
-        allCocktailList[i].score = recipeClone.length;
-        console.log('the remaining ingredients number at ' + recipeClone.length);
-      };
-    };
-  };
-};
+// allCocktailList[i].score = recipeClone.length;
+// console.log('the remaining ingredients number at ' + recipeClone.length);
+  
+
