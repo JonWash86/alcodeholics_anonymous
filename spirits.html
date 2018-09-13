@@ -218,34 +218,25 @@
   </form>
   <script type="text/javascript" src="js/form.js"></script>
   <script>
-    var mouseOver = document.getElementById('ingredientsCheck').children;
+    var labels = document.getElementById('ingredientsCheck').children;
 
     function addEventsToLabels() {
-      for(var i = 0; i < mouseOver.length; i++) {
-        mouseOver[i].addEventListener('mouseover', changeBGColor);
-        mouseOver[i].addEventListener('mouseout', clearBGColor);
+      for(var i = 0; i < labels.length; i++) {
+        labels[i].addEventListener('mouseover', changeBGColor);
+        labels[i].addEventListener('mouseout', clearBGColor);
       }
     }
     addEventsToLabels();
 
     function changeBGColor(e) {
       var target = e.target;
-      target.style.backgroundColor = getRandomColor();
+      target.style.backgroundColor = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 0.5)';
       console.log(target);
     }
     
     function clearBGColor(e) {
         var target = e.target;
         target.style.backgroundColor = '';
-    }
-
-    function getRandomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
     }
 
   </script>
