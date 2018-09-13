@@ -70,8 +70,7 @@
         background-color: rgba(0, 0, 0,0.7);
       }
       #ingredientsCheck {
-        margin-left: 200px;
-        margin-right: 200px;
+        margin: auto;
         text-align: left;
         line-height: 2em;
         z-index: 1;
@@ -80,15 +79,14 @@
       }
 
       fieldset label {
-        display: inline-block;
+        /* display: inline-block;
         width: 24%;
         margin-bottom: 15px;
         padding-left: 20px;
         font-size: 22px;
-        box-sizing: border-box;
+        box-sizing: border-box; */
       }
       fieldset label:hover {
-        background-color: pink;
         cursor: pointer;
         color: black;
       }
@@ -102,12 +100,12 @@
         padding: 10px;
         border: 3px solid black;
       }
-      .formButtons {
+      .submitButton {
         text-align: center;
         width: 100%;
         z-index: 1;
       }
-      .formButtons input{
+      .submitButton input{
         padding: 20px 40px;
         border-radius: 20px;
         background: transparent;
@@ -119,7 +117,7 @@
         margin-right: 10px;
         cursor: pointer;
       }
-      .formButtons input:hover {
+      .submitButton input:hover {
         background-image: none;
         background-color: orange;
       }
@@ -179,34 +177,55 @@
     <section id='userPicks'>
       <div class="bgOverlay"></div>
       <fieldset id='ingredientsCheck'>
-      <legend>What do you have lying around?</legend>
-      <div id='checkBoxSpace'>
+        <legend>What do you have lying around?</legend>
+        <div id='checkBoxSpace'></div>
+      </fieldset>
+      <div class="submitButton">
+        <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
       </div>
-    </fieldset>
-    <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
+    </section>
   </form>
   <script type="text/javascript" src="js/form.js"></script>
   <script>
-    var labels = document.getElementById('ingredientsCheck').children;
 
-    function addEventsToLabels() {
-      for(var i = 0; i < labels.length; i++) {
-        labels[i].addEventListener('mouseover', changeBGColor);
-        labels[i].addEventListener('mouseout', clearBGColor);
+    var getTD = document.getElementsByClassName('ingredientsTable');
+    var getTable = document.getElementById('ingredientsCheck');
+  
+
+    function addEventToTD() {
+      for(var i = 1; i < getTD.length; i++) {
+        getTD[i].addEventListener('mouseover', changeBColor);
       }
     }
-    addEventsToLabels();
 
-    function changeBGColor(e) {
+    function changeBColor(e) {
       var target = e.target;
-      target.style.backgroundColor = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 0.5)';
+      if(target.nodeName == 'TD') {
+        for(var i = 1; i < getTD.length; i++) {
+          getTD[i].style.backgroundColor = '';
+        }
+        target.style.backgroundColor = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 0.5)';
+      }
+    }
+
+
+    function removeBG(e) {
+      var target = e.target;
       console.log(target);
+      if(target.nodeName == 'FIELDSET'){
+          for(var i = 1; i < getTD.length; i++) {
+                  getTD[i].style.backgroundColor = '';
+          }
+      }
+    }
+
+    
+    function runFuncOnLoad() {
+      addEventToTD();
+      getTable.addEventListener('mouseover', removeBG);
     }
     
-    function clearBGColor(e) {
-        var target = e.target;
-        target.style.backgroundColor = '';
-    }
+    window.addEventListener('load', runFuncOnLoad);
 
   </script>
 </body>
