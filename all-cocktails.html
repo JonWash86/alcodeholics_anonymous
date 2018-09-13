@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type='text/javascript' src='js/ingredients.js'></script>
+    <script type='text/javascript' src='js/cocktails.js'></script>
     <title>All Cocktails</title>
 </head>
 <body class="all-cocktails">
@@ -13,7 +15,7 @@
                 <nav>
                     <ul>
                         <li><a href="spirits.html">Home</a></li>
-                        <li><a href="">All Cocktails</a></li>
+                        <li><a href="all-cocktails.html">All Cocktails</a></li>
                     </ul>
                 </nav>
             </section>
@@ -22,7 +24,8 @@
             <h1>All Cocktails</h1>
             <div id="allCocktailsList"></div>
             <div id="popup" class="hide"></div>
-            <script src="scripts.js"></script>
+            <script src="js/grid_popup.js"></script>
         </main>
+  <script>window.addEventListener('load', allCocktailsPage);</script>
 </body>
 </html>
