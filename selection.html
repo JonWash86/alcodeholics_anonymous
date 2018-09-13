@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script type='text/javascript' src='js/form.js'></script>
-
-    <script type='text/javascript' src='scripts.js'></script>
+    <link rel="stylesheet" href="css/style.css">
     <script type='text/javascript' src='js/cocktails.js'></script>
+    <script type='text/javascript' src='js/ingredients.js'></script>
+    <script type='text/javascript' src='js/form.js'></script>
+    <script type='text/javascript' src='js/grid_popup.js'></script>
     <style>
       body {
         margin: 0;
@@ -131,7 +131,7 @@
       <a href="Homepage.html"><img src="http://i44.photobucket.com/albums/f35/idomosko/LogoMakr_5kAcgi_zpsvn3sdung.png" alt=""></a>
       <nav>
         <ul>
-          <li><a href="">Home</a></li>
+          <li><a href="selection.html">Home</a></li>
           <li><a href="all-cocktails.html">All Cocktails</a></li>
         </ul>
       </nav>
@@ -142,18 +142,21 @@
     <div class="spirit-selection">
       <label>
         <figcaption>COGNAC</figcaption>
-        <input type="radio" name="spirit" value="Cognac"/>
-        <a href="#userPicks"><img src="images/spirit_imgs/cognac.png"/></a>
+        <input type="radio" name="spirit" value="cognac"/>
+        <!-- <a href="#userPicks"> -->
+        <img src="images/spirit_imgs/cognac.png"/></a>
       </label>
       <label>
         <figcaption>GIN</figcaption>
-        <input type="radio" name="spirit" value="Gin"/>
-        <a href="#userPicks"><img src="images/spirit_imgs/gin.png"/></a>
+        <input type="radio" name="spirit" value="gin"/>
+        <!-- <a href="#userPicks"> -->
+        <img src="images/spirit_imgs/gin.png"/></a>
       </label>
       <label>
         <figcaption>RUM</figcaption>
-        <input type="radio" name="spirit" value="Rum"/>
-        <a href="#userPicks"><img src="images/spirit_imgs/rum.png"/></a>
+        <input type="radio" name="spirit" value="rum"/>
+        <!-- <a href="#userPicks"> -->
+        <img src="images/spirit_imgs/rum.png"/></a>
       </label>
 
     </div>
@@ -161,18 +164,21 @@
     <div class="spirit-selection" style="margin-bottom: 30px;">
       <label>
         <figcaption>TEQUILA</figcaption>
-        <input type="radio" name="spirit" value="Tequila"/>
-        <a href="#userPicks"><img src="images/spirit_imgs/tequila.png" /></a>
+        <input type="radio" name="spirit" value="tequila"/>
+        <!-- <a href="#userPicks"> -->
+        <img src="images/spirit_imgs/tequila.png" /></a>
       </label>
       <label>
         <figcaption>VODKA</figcaption>
-        <input type="radio" name="spirit" value="Vodka"/>
-        <a href="#userPicks"><img src="images/spirit_imgs/vodka.png" /></a>
+      <input type="radio" name="spirit" value="vodka"/>
+      <!-- <a href="#userPicks"> -->
+        <img src="images/spirit_imgs/vodka.png" /></a>
       </label>
       <label>
         <figcaption>WHISKEY</figcaption>
-        <input type="radio" name="spirit" value="Whiskey"/>
-        <a href="#userPicks"><img src="images/spirit_imgs/whiskey.png" /></a>
+        <input type="radio" name="spirit" value="whiskey"/>
+        <!-- <a href="#userPicks"> -->
+          <img src="images/spirit_imgs/whiskey.png" /></a>
       </label>
     </div>
 
@@ -187,6 +193,7 @@
   </form>
   <script type="text/javascript" src="js/form.js"></script>
   <script>
+    window.addEventListener('load', buildBoxes);
     var mouseOver = document.getElementById('ingredientsCheck').children;
 
     function addEventsToLabels() {
@@ -202,7 +209,7 @@
       target.style.backgroundColor = getRandomColor();
       console.log(target);
     }
-    
+
     function clearBGColor(e) {
         var target = e.target;
         target.style.backgroundColor = '';

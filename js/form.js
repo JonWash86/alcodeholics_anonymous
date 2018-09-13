@@ -3,7 +3,7 @@ function storeIngredients(){
   localStorage.setItem('spirit', spiritSelection);
   var options = [];
   var ingredients = document.getElementsByTagName('input');
-  for (var i = 0; i < ingredients.length; i++){
+  for (var i =0; i < ingredients.length; i++){
     var ingredient = ingredients[i];
     if (ingredient.type == 'checkbox' && ingredient.checked){
       options[options.length] = ingredient.value;
@@ -23,7 +23,6 @@ function scoreMatch(){
       var recipeClone = allCocktailList[i].rawIngredients.slice();
       console.log('the recipe clone for ' + allCocktailList[i].name + ' is ' + recipeClone);
       for (var number = 0; number < storedIngredients.length; number++){
-        // console.log('the user-submitted ingredient being examined right now is ' + storedIngredients[number]);
         var match = recipeClone.indexOf(storedIngredients[number])
         if (match >= 0){
           console.log('matched index ' + recipeClone.indexOf(storedIngredients[number]));
@@ -33,25 +32,19 @@ function scoreMatch(){
         // vodkaCocktails[i].score = recipeClone.length;
         allCocktailList[i].score = recipeClone.length;
         console.log('the remaining ingredients number at ' + recipeClone.length);
-        
+
       }
     }
   }
-
 }
 
-
-//jc code
-//this code should run when user hits submit button
 function listCocktails() {
-  
-  var localSpirit = localStorage.getItem('spirit').toLocaleLowerCase(); 
+
+  var localSpirit = localStorage.getItem('spirit').toLocaleLowerCase();
   cocktailRecipes[localSpirit].sort(function (a, b) {
     return a.score - b.score;
-    
-    
   });
-  console.log(cocktailRecipes[localSpirit]);  
+
     for(var cocktailIndex = 0; cocktailIndex < cocktailRecipes[localSpirit].length; cocktailIndex++) {
         // var eachCocktail = document.createElement('div');
         var resultsSpace = document.getElementById('resultsSpace');
@@ -69,23 +62,4 @@ function listCocktails() {
         eachCocktail.appendChild(cocktailImage);
         eachCocktail.appendChild(cocktailTitle);
     }
-  
-
 }
-
-    
-
-
-
-    
- 
-
-
-
-// window.addEventListener('load', listCocktails);
-
-
-// allCocktailList[i].score = recipeClone.length;
-// console.log('the remaining ingredients number at ' + recipeClone.length);
-  
-
