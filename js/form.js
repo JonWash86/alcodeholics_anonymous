@@ -15,6 +15,7 @@ function storeIngredients(){
 
 function scoreMatch(){
   var storedSpirit = JSON.parse(localStorage.getItem('spirit'));
+  console.log(storedSpirit);
   var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
   for (var i = 0; i < allCocktailList.length; i++){
     if (storedSpirit === allCocktailList[i].spirit){
@@ -34,6 +35,29 @@ function scoreMatch(){
   };
 };
 
-function sayHello(){
-  console.log('Hello!');
-};
+function listCocktails(){
+  var localSpirit = JSON.parse(localStorage.getItem('spirit').toLowerCase());
+  console.log(cocktailRecipes[localSpirit]);
+  cocktailRecipes[localSpirit].sort(function (a, b) {
+    return a.score - b.score;
+  });
+
+  console.log(cocktailRecipes[localSpirit]);
+    for(var cocktailIndex = 0; cocktailIndex < cocktailRecipes[localSpirit].length; cocktailIndex++) {
+        // var eachCocktail = document.createElement('div');
+        var resultsSpace = document.getElementById('resultsSpace');
+        var eachCocktail = document.createElement('div');
+        eachCocktail.setAttribute('class', 'cocktail');
+        eachCocktail.addEventListener('click', expandPopup);
+        var cocktailObject = cocktailRecipes[localSpirit][cocktailIndex];
+
+        console.log(cocktailObject);
+        var cocktailImage = document.createElement('img');
+        cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + cocktailObject.image);
+        var cocktailTitle = document.createElement('h2');
+        cocktailTitle.innerText = cocktailObject.name;
+        resultsSpace.appendChild(eachCocktail);
+        eachCocktail.appendChild(cocktailImage);
+        eachCocktail.appendChild(cocktailTitle);
+    }
+}
