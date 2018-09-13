@@ -6,7 +6,6 @@ font-family: 'Noticia Text', serif; */
 
 nav{
     font-family: 'Fugaz One', cursive;
-    
 }
 
 .homepage {
@@ -186,12 +185,6 @@ label input:checked + img{
   border: 2px solid blue;
 }
 
-#ingredientsCheck {
-  margin-left: 200px;
-  margin-right: 200px;
-  text-align: center;
-  line-height: 2em;
-}
 
 
 
