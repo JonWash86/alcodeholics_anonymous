@@ -9,6 +9,7 @@
     <script type='text/javascript' src='js/form.js'></script>
 
     <script type='text/javascript' src='scripts.js'></script>
+    <script type='text/javascript' src='js/cocktails.js'></script>
     <style>
       body {
         margin: 0;
@@ -174,47 +175,15 @@
         <a href="#userPicks"><img src="images/spirit_imgs/whiskey.png" /></a>
       </label>
     </div>
+
     <section id='userPicks'>
       <div class="bgOverlay"></div>
       <fieldset id='ingredientsCheck'>
-        <legend>What do you have lying around?</legend>
-        <label><input type='checkbox' name='agave syrup' value='agave syrup'>Agave Syrup</label>
-        <label><input type='checkbox' name='ingredient' value='coffee'>Coffee</label>
-        <label><input type='checkbox' name='ingredient' value='cranberry juice'>Cranberry Juice</label>
-        <label><input type='checkbox' name='ingredient' value='dry vermouth'>Dry Vermouth</label>
-        <label><input type='checkbox' name='ingredient' value='egg'>Egg</label>
-        <label><input type='checkbox' name='ingredient' value='ginger beer'>Ginger Beer</label>
-
-        <label><input type='checkbox' name='ingredient' value='grapefruit juice'>Grapefruit Juice</label>
-        <label><input type='checkbox' name='ingredient' value='grenadine syrup'>Grenadine Syrup</label>
-        <label><input type='checkbox' name='ingredient' value='heavy cream'>Heavy Cream</label>
-        <label><input type='checkbox' name='ingredient' value='kalua'>Kalua/Coffee Liqueur</label>
-        <label><input type='checkbox' name='ingredient' value='lemon'>Lemon</label>
-
-        <label><input type='checkbox' name='ingredient' value='lemonade'>Lemonade</label>
-        <label><input type='checkbox' name='ingredient' value='lime'>Lime</label>
-        <label><input type='checkbox' name='ingredient' value='mint leaves'>Mint Leaves</label>
-        <label><input type='checkbox' name='ingredient' value='olives'>Olives</label>
-        <label><input type='checkbox' name='ingredient' value='orange juice'>Orange Juice</label>
-
-        <label><input type='checkbox' name='ingredient' value='orange'>Orange</label>
-        <label><input type='checkbox' name='ingredient' value='orange curacao'>Orange Curacao</label>
-        <label><input type='checkbox' name='ingredient' value='almond orgeat'>Almond Orgeat</label>
-        <label><input type='checkbox' name='ingredient' value='pineapple juice'>Pineapple Juice</label>
-        <label><input type='checkbox' name='ingredient' value='pinot noir'>Pinot Noir</label>
-
-        <label><input type='checkbox' name='salt' value='salt'>Salt</label>
-        <label><input type='checkbox' name='sugar' value='sugar'>Sugar</label>
-        <label><input type='checkbox' name='sweet vermouth' value='sweet vermouth'>Sweet Vermouth</label>
-        <label><input type='checkbox' name='tonic water' value='tonic water'>Tonic Water</label>
-        <label><input type='checkbox' name='triple sec' value='triple sec'>Triple Sec</label>
-        <label><input type='checkbox' name='whipped cream' value='whipped cream'>Whipped Cream</label>
-      </fieldset>
-      <div class="formButtons">
-        <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
-        <input type='button' value='Compare!' id='compareingredients' onclick='scoreMatch()'>
+      <legend>What do you have lying around?</legend>
+      <div id='checkBoxSpace'>
       </div>
-    </section>
+    </fieldset>
+    <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
   </form>
   <script type="text/javascript" src="js/form.js"></script>
   <script>
