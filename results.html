@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/style.css">
       <title>Document</title>
+
       <script type='text/javascript'src='js/grid_popup.js'></script>
       <script type='text/javascript'src='js/cocktails.js'></script>
       <script type='text/javascript' src='js/ingredients.js'></script>
@@ -17,11 +18,26 @@
           #resultsSpace{
               display: flex;
           }
+          #extras{
+            display: flex;
+          }
           .cocktail h2 {
             background-color: black;
           }
-      </style>
 
+          .content{
+              height: auto;
+          }
+
+          #extras img{
+              width: 250px;
+          }
+
+          #header1, #header2{
+              text-align: center;
+          }
+
+      </style>
   </head>
   <body>
     <header>
@@ -36,11 +52,14 @@
         </section>
     </header>
     <div class="bg-cover"></div>
-    <div class='content'>
-    <h1>Here's what you can make:</h1>
-    <section id='resultsSpace'></section>
-    <h2>Still not sure? Check out our full recipes <a>here.</a></h2>
-    <h2><a>Or you can mix it up again!</a></h2>
-  </div>
+    <div id = "header1" ></div>
+    <div class="content">
+        <div id='resultsSpace'></div>
+    </div>
+    
+    <div id= "header2"></div>  
+    <div class="content" id="extras">
+    </div>
+            
   </body>
 </html>
