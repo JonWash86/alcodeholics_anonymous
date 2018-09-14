@@ -184,3 +184,10 @@ label input + img{
 label input:checked + img{
   border: 2px solid blue;
 }
+
+#instructions{
+  font-family: 'Fugaz One', cursive;
+  font-size: 14px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
