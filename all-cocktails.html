@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type='text/javascript' src='js/cocktails.js'></script>
+    <script type='text/javascript' src='js/ingredients.js'></script>
     <title>All Cocktails</title>
 </head>
 <body class="all-cocktails">
@@ -12,8 +14,8 @@
                 <img class="logo" src="http://i44.photobucket.com/albums/f35/idomosko/LogoMakr_5kAcgi_zpsvn3sdung.png" alt="">
                 <nav>
                     <ul>
-                        <li><a href="spirits.html">Home</a></li>
-                        <li><a href="">All Cocktails</a></li>
+                        <li><a href="selection.html">Home</a></li>
+                        <li><a href="all-cocktails.html">All Cocktails</a></li>
                     </ul>
                 </nav>
             </section>
@@ -22,10 +24,8 @@
             <h1>All Cocktails</h1>
             <div id="allCocktailsList"></div>
             <div id="popup" class="hide"></div>
-            <script src="scripts.js">  </script>
-            <!-- //we can delete this if needed added on here so that this would load on this page only  -->
-            <script>window.addEventListener('load', allCocktailsPage);</script>
-
         </main>
+  <script src="js/grid_popup.js"></script>
+  <script>window.addEventListener('load', allCocktailsPage);</script>
 </body>
 </html>
