@@ -15,28 +15,7 @@
       window.addEventListener('load', listCocktails);
       </script>
       <style>
-          #resultsSpace{
-              display: flex;
-          }
-          #extras{
-            display: flex;
-          }
-          .cocktail h2 {
-            background-color: black;
-          }
-
-          .content{
-              height: auto;
-          }
-
-          #extras img{
-              width: 250px;
-          }
-
-          #header1, #header2{
-              text-align: center;
-          }
-
+         
       </style>
   </head>
   <body>
@@ -51,15 +30,14 @@
             </nav>
         </section>
     </header>
-    <div class="bg-cover"></div>
-    <div id = "header1" ></div>
+    <div id="header1" class="hide"><h1>Heres what you can make</h1></div>
     <div class="content">
         <div id='resultsSpace'></div>
     </div>
     
-    <div id= "header2"></div>  
+    <div id="header2" class="hide"><h1>Get more ingredients to mix these up</h1></div>  
     <div class="content" id="extras">
     </div>
-            
+    <div id="popup" class="hide"></div>
   </body>
 </html>

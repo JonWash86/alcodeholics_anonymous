@@ -3,11 +3,15 @@
 
 /* font-family: 'Slabo 27px', serif;
 font-family: 'Noticia Text', serif; */
-
-nav{
+body {
+    margin: 0;
+}
+nav, h1{
     font-family: 'Fugaz One', cursive;
 }
-
+h1 {
+    text-align: center;
+}
 .homepage {
     margin: 0;
     background-image: url(https://www.inspiredtaste.net/wp-content/uploads/2012/10/Southside-Cocktail-Recipe-1-1200.jpg);
@@ -17,9 +21,9 @@ nav{
 .all-cocktails {
     margin: 0
 }
-.all-cocktails  main {
+.all-cocktails  main, .content, #resultsSpace {
     margin: 0 auto;
-    max-width: 1200px;
+    width: 1200px;
 }
 .bg-cover {
     position: absolute;
@@ -71,7 +75,7 @@ nav ul li {
     color: white;
     padding: 10px;
 }
-.content {
+.homepage-content {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -98,21 +102,26 @@ nav ul li {
     background: teal;
     border: 2px solid teal;
 }
-.all-cocktails h2 {
+.all-cocktails h2, #popup h2 {
     width: 100%;
     background-color: #eaeaea;
     padding: 10px;
     box-sizing: border-box;
 }
-#Vodka, #Tequila, #Rum, #Gin, #Whiskey, #Cognac {
+#vodka, #tequila, #rum, #gin, #whiskey, #cognac, .content, #resultsSpace {
     display: flex;
     flex-flow: wrap;
+}
+.content {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .cocktail {
     width: 25%;
     padding: 5px;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
+    margin-bottom: 20px;
 }
 .cocktail:hover {
     transform: scale(1.1);
@@ -146,7 +155,7 @@ nav ul li {
     display: flex;
     background-color: white;
     margin-top: 5%;
-    border: 3px solid black;
+    border: 5px solid pink;
     padding: 10px;
     position: relative;
     justify-content: space-between;
@@ -160,6 +169,9 @@ nav ul li {
     color: white;
     border: 1px solid white;
     border-radius: 25px;
+}
+.exit-popup {
+    cursor: pointer;
 }
 .imageAndTitle, .ingAndDesc {
     width: 48%;
