@@ -1,5 +1,4 @@
 function Cocktail(spirit, name, ingredients, image, howToMake, rawIngredients) {
-
     this.spirit = spirit;
     this.name = name;
     this.ingredients = ingredients;
@@ -8,7 +7,6 @@ function Cocktail(spirit, name, ingredients, image, howToMake, rawIngredients) {
     this.score = 100;
     this.breakSteps = this.howToMake.split('.');
     this.rawIngredients= rawIngredients;
-
 }
 
 var vodkaCocktails = [];
@@ -17,16 +15,6 @@ var ginCocktails = [];
 var tequilaCocktails = [];
 var whiskeyCocktails = [];
 var cognacCocktails = [];
-
-
-var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
-
-var cocktailRecipes = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};
-
-
-// oirignal code replaced with line 26 in order to be able to list in order.
-var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
-
 
 
 vodkaCocktails.push(new Cocktail('vodka', 'White Russian', ['1.5 oz Vodka', 'Coffee liquor', 'Milk'], 'white_russian.jpg', 'stir with ice cubes in a shaker', ['coffee liqueur', 'heavy cream']));
@@ -76,6 +64,9 @@ cognacCocktails.push(new Cocktail('Cognac', 'Cognac Manhattan', ['2 oz cognac', 
 cognacCocktails.push(new Cocktail('cognac', 'Spiked cider', ['2 oz cognac', ' 4 oz apple cider', 'Orange peel'], 'spiked_cider.jpg', 'Combine the cider and Cognac over ice. Twist the orange peel to release the oils over the top of the drinks. Then sink it in', ['apple cider', 'orange']));
 cognacCocktails.push(new Cocktail('cognac', 'Ode To Tiki', ['2 oz cognac', ' 1 oz orgeat', '1 oz lemon juice'], 'ode_to_tiki.jpg', 'Shake all ingredients over ice. pour into a glass.  Enjoy!', ['orgeat', 'lemon']));
 
+var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
 
+
+var cocktailRecipes = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};
 
 var allCocktailList = vodkaCocktails.concat(rumCocktails, ginCocktails, whiskeyCocktails, tequilaCocktails, cognacCocktails);
