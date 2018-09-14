@@ -39,7 +39,6 @@ function expandPopup(e) {
             var popup = document.getElementById('popup');
             var popupInner = document.createElement('div');
             var exitPopup = document.createElement('a');
-            exitPopup.setAttribute('href', '#');
             exitPopup.setAttribute('class', 'exit-popup');
             exitPopup.innerText = 'X';
             exitPopup.setAttribute('onclick', 'location.reload()');
