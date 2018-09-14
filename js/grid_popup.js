@@ -1,5 +1,4 @@
 
-// Build each cocktail to the all cocktails page
 function buildCocktailGrid() {
     for(var i = 0; i < allCocktails.length; i++) {
         var allCocktailsDiv = document.getElementById('allCocktailsList');
@@ -10,7 +9,6 @@ function buildCocktailGrid() {
         h2.innerText = spiritTitle + ' Cocktails';
         createSpiritDiv.appendChild(h2);
         allCocktailsDiv.appendChild(createSpiritDiv);
-
         for(var cocktailIndex = 0; cocktailIndex < allCocktails[i].length; cocktailIndex++) {
             var eachCocktail = document.createElement('div');
             eachCocktail.setAttribute('class', 'cocktail');
@@ -19,7 +17,7 @@ function buildCocktailGrid() {
             var cocktailImage = document.createElement('img');
             cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + allCocktails[i][cocktailIndex].image);
             var cocktailTitle = document.createElement('h2');
-            cocktailTitle.innerText = allCocktails[i][cocktailIndex].name;
+            cocktailTitle.innerText = allCocktails[i][cocktailIndex].name.toLowerCase();
             eachCocktail.appendChild(cocktailImage);
             eachCocktail.appendChild(cocktailTitle);
             createSpiritDiv.appendChild(eachCocktail);

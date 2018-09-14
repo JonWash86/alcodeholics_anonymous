@@ -1,11 +1,20 @@
-
+/* we can get different fonts i was trying to match the weight of the logo */
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700i');
 
-/* font-family: 'Slabo 27px', serif;
-font-family: 'Noticia Text', serif; */
 
 nav{
-    font-family: 'Fugaz One', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+
+}
+#vodka h2{
+    font-family: 'Roboto Condensed', sans-serif;
+
 }
 
 .homepage {
@@ -183,4 +192,9 @@ label input + img{
 
 label input:checked + img{
   border: 2px solid blue;
+}
+
+fieldset{
+    box-shadow: 0 4px 8px 0 rgba(3, 63, 87, 0.363), 0 6px 20px 0 rgba(3, 63, 87, 0.363);
+
 }
