@@ -1,17 +1,127 @@
-
+/* 
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 
-/* font-family: 'Slabo 27px', serif;
-font-family: 'Noticia Text', serif; */
+/* Generic */
 body {
     margin: 0;
-}
-nav, h1{
     font-family: 'Fugaz One', cursive;
 }
-h1 {
+h1, figcaption{
     text-align: center;
 }
+a {
+    text-decoration: none;
+}
+header {
+    background-color: black;
+}
+img, .cocktail {
+    transition: all .2s ease-in-out;
+}
+.cocktail:hover, .spirit-selection img:hover{
+    transform: scale(1.1);
+}
+.hide {
+    display: none;
+}
+/* --------------------------------- selection page -------------------------------- */
+  .spirit-selection, #userPicks, header section, nav ul, .homepage-content, .cocktails-grid, .popup-inner {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-flow: wrap;
+      align-items: center;
+  }
+  #instructions, .spirit-selection, #ingredientsCheck, header section {
+      width: 1000px;
+      margin: auto;
+  }
+  .spirit-selection label input{
+    visibility: hidden;
+    position: absolute;
+  }
+  .spirit-selection label{
+    width: 33%;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .spirit-selection img{
+    height: 315px;
+  }
+  .spirit-selection img:hover{
+    box-shadow:
+      1px 1px #505961,
+      2px 2px #505961,
+      3px 3px #505961;
+  }
+  #userPicks {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative;
+    background-image: url(https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_960_720.jpg);
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  .bgOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.7);
+  }
+  #ingredientsCheck {
+    text-align: left;
+    line-height: 2em;
+    z-index: 1;
+    background-color: white;
+    border: 3px solid pink;
+  }
+  #ingredientsCheck table {
+      width: 100%;
+  }
+  fieldset legend {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    background-color: pink;
+    color: black;
+    padding: 10px;
+    border: 3px solid black;
+  }
+  #ingredientsCheck td {
+      font-size: 20px;
+      padding: 5px;
+  }
+  #ingredientsCheck td:hover, #ingredientsCheck label:hover, .exit-popup, .cocktail:hover {
+      cursor: pointer;
+  }
+  .submitFormBtn {
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+  }
+  .submitFormBtn input{
+    padding: 20px 40px;
+    border-radius: 20px;
+    background: transparent;
+    background-image: url(https://cdn.pixabay.com/photo/2016/01/23/11/41/button-1157299_960_720.png);
+    background-position: center;
+    font-size: 30px;
+    border: 1px solid black;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .submitFormBtn input:hover {
+    background-image: none;
+    background-color: orange;
+  } 
+  /* -------------------------- homepage --------------------------------- */
 .homepage {
     margin: 0;
     background-image: url(https://www.inspiredtaste.net/wp-content/uploads/2012/10/Southside-Cocktail-Recipe-1-1200.jpg);
@@ -24,22 +134,6 @@ h1 {
 .all-cocktails  main, .content, #resultsSpace {
     margin: 0 auto;
     width: 1200px;
-}
-.bg-cover {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background-color: black;
-    z-index: -1;
-    opacity: 0.35;
-    height: 100%;
-}
-a {
-    text-decoration: none;
-}
-header {
-    background-color: black;
 }
 .homepage header {
     opacity: 0.5;
@@ -57,9 +151,6 @@ header a:hover {
     color: white;
 }
 header section {
-    max-width: 1000px;
-    display: flex;
-    margin: auto;
     align-items: center;
     justify-content: space-between;
 }
@@ -68,7 +159,6 @@ header img {
 }
 nav ul {
     list-style: none;
-    display: flex;
 }
 nav ul li {
     font-size: 25px;
@@ -77,9 +167,6 @@ nav ul li {
 }
 .homepage-content {
     height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-flow: wrap;
     align-content: center;
     max-width: 900px;
     margin: auto;
@@ -102,44 +189,33 @@ nav ul li {
     background: teal;
     border: 2px solid teal;
 }
+/* --------------------------------- All Cocktails Page ------------------------------ */
 .all-cocktails h2, #popup h2 {
     width: 100%;
-    background-color: #eaeaea;
-    padding: 10px;
     box-sizing: border-box;
 }
-#vodka, #tequila, #rum, #gin, #whiskey, #cognac, .content, #resultsSpace {
-    display: flex;
-    flex-flow: wrap;
+.cocktails-grid {
+    justify-content: left;
 }
-.content {
-    margin-top: 30px;
-    margin-bottom: 30px;
+#vodka > h2, #tequila > h2, #rum > h2, #gin > h2, #whiskey > h2, #cognac > h2, .content > h2, .ingAndDesc > h2 {
+    border-bottom: 5px solid pink;
+    text-transform: capitalize;
 }
 .cocktail {
     width: 25%;
     padding: 5px;
     box-sizing: border-box;
-    transition: all .2s ease-in-out;
     margin-bottom: 20px;
-}
-.cocktail:hover {
-    transform: scale(1.1);
-    cursor: pointer;
 }
 .cocktail img {
     width: 100%;
     height: 275px;
 }
-.cocktail h2 {
+.cocktail h2, .imageAndTitle h2 {
     background-color: aliceblue;
     margin: 0;
     text-align: center;
     padding: 10px 0;
-}
-
-.hide {
-    display: none;
 }
 #popup {
     width: 100%;
@@ -152,13 +228,16 @@ nav ul li {
 .popup-inner {
     max-width: 750px;
     margin: auto;
-    display: flex;
     background-color: white;
     margin-top: 5%;
-    border: 5px solid pink;
+    border: 5px solid purple;
     padding: 10px;
     position: relative;
     justify-content: space-between;
+}
+
+.imageAndTitle h2 {
+    background-color: pink;
 }
 .popup-inner a {
     position: absolute;
@@ -170,9 +249,6 @@ nav ul li {
     border: 1px solid white;
     border-radius: 25px;
 }
-.exit-popup {
-    cursor: pointer;
-}
 .imageAndTitle, .ingAndDesc {
     width: 48%;
 }
@@ -182,24 +258,3 @@ nav ul li {
 
 /* Spirit and Ingredient Selection Form Styling */
 
-
-.spirit-selection label input{
-  visibility: hidden;
-  position: absolute;
-}
-
-label input + img{
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-label input:checked + img{
-  border: 2px solid blue;
-}
-
-#instructions{
-  font-family: 'Fugaz One', cursive;
-  font-size: 14px;
-  margin-left: 200px;
-  margin-right: 200px;
-}
