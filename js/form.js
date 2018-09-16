@@ -21,7 +21,6 @@ function existIng() {
     if (storedSpirit === allCocktailList[i].spirit){
       for(var storedIngredientsIndex = 0; storedIngredientsIndex < storedIngredients.length; storedIngredientsIndex++) {
         if(allCocktailList[i].rawIngredients.includes(storedIngredients[storedIngredientsIndex])) {
-          allCocktailList[i].exist.push(storedIngredients[storedIngredientsIndex]);
           allCocktailList[i].rawIngredients.splice(storedIngredients[storedIngredientsIndex],1);
         }
       }
@@ -29,18 +28,6 @@ function existIng() {
   }
 }
 
-// function missingIngs() {
-//   var storedSpirit = localStorage.getItem('spirit');
-//   for (var i = 0; i < allCocktailList.length; i++){
-//     if (storedSpirit === allCocktailList[i].spirit){
-//       for(var existIngIndex = 0; existIngIndex < allCocktailList[i].exist.length; existIngIndex++) {
-//         if(allCocktailList[i].exist.includes(allCocktailList[i].rawIngredients[existIngIndex])) {
-//           allCocktailList[i].rawIngredients.splice(existIngIndex, 1);
-//       }
-//     }
-//     }
-//   }
-// }
 
 function scoreMatch(){
   var storedSpirit = localStorage.getItem('spirit');
