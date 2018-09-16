@@ -21,7 +21,7 @@ function existIng() {
     if (storedSpirit === allCocktailList[i].spirit){
       for(var storedIngredientsIndex = 0; storedIngredientsIndex < storedIngredients.length; storedIngredientsIndex++) {
         if(allCocktailList[i].rawIngredients.includes(storedIngredients[storedIngredientsIndex])) {
-          allCocktailList[i].rawIngredients.splice(storedIngredients[storedIngredientsIndex],1);
+          allCocktailList[i].rawIngredients.splice(storedIngredients[storedIngredientsIndex].value,1);
         }
       }
     }

@@ -35,7 +35,19 @@ ul {
       flex-flow: wrap;
       align-items: center;
   }
-  #instructions, .spirit-selection, #ingredientsCheck, header section {
+  #instructions {
+    background-image: url(https://media.istockphoto.com/photos/handsome-bartender-with-shaker-picture-id851094276?k=6&m=851094276&s=612x612&w=0&h=c16Ck8mrn8CGZD9gMS1R6cZGGeboUeW8ONau0lQ1Kpw=);
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: right top;
+    background-size: cover;
+    align-items: center;
+    height: 600px;
+  }
+  #instructions h2 {
+      width: 400px;
+  }
+  #instructions, .spirit-selection, #ingredientsCheck, header section, .lookAgain inner {
       width: 1000px;
       margin: auto;
   }
@@ -284,4 +296,10 @@ nav ul li {
     border: 1px solid black;
     padding: 5px;
     background-color: red;
+}
+.lookAgain {
+    position: relative;
+}
+.lookAgain inner {
+    display: flex;
 }
