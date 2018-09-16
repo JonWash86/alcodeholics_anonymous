@@ -50,7 +50,6 @@ function listCocktails() {
     for(var cocktailIndex = 0; cocktailIndex < cocktailRecipes[localSpirit].length; cocktailIndex++) {
         var score = (cocktailRecipes[localSpirit][cocktailIndex].score);
         if (score === 0){
-
           var resultsSpace = document.getElementById('resultsSpace');
           console.log(headerParent);
           var headerParent = document.getElementById('header1');
