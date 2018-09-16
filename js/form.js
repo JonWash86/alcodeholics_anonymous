@@ -1,3 +1,4 @@
+
 function storeIngredients(){
   var spiritSelection = document.selectionForm.spirit.value
   localStorage.setItem('spirit', spiritSelection);
@@ -50,6 +51,12 @@ function scoreMatch(){
 
 var localSpirit = localStorage.getItem('spirit').toLowerCase();
 function listCocktails() {
+
+  if(!cocktailRecipes[localSpirit]){
+    var headerParent = document.getElementById('empty');
+    headerParent.classList.remove('hide');
+  }
+
   cocktailRecipes[localSpirit].sort(function (a, b) {
     return a.score - b.score;
   });
@@ -73,10 +80,39 @@ function listCocktails() {
           resultsSpace.appendChild(eachCocktail);
           eachCocktail.appendChild(cocktailImage);
           eachCocktail.appendChild(cocktailTitle);
-        } else {
+        } else if (score === 1 || score ===2) {
+          var resultsSpace = document.getElementById('possibilities');
+          var headerParent3 = document.getElementById('header2');
+          headerParent3.classList.remove('hide');
+          // var head2 = document.createElement('h2');
+          // head2.innerText = 'Get more ingredients to mix these up';
+          // console.log(head2);
+
+          var eachCocktail = document.createElement('div');
+          eachCocktail.setAttribute('class', 'cocktail');
+          eachCocktail.dataset.drink = cocktailRecipes[localSpirit][cocktailIndex].name;
+          eachCocktail.addEventListener('click', expandPopupResults);
+          var cocktailObject = cocktailRecipes[localSpirit][cocktailIndex];
+
+          console.log(cocktailObject);
+          var cocktailImage = document.createElement('img');
+          cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + cocktailObject.image);
+          var cocktailTitle = document.createElement('h2');
+          cocktailTitle.innerText = cocktailObject.name;
+          resultsSpace.appendChild(eachCocktail);
+          eachCocktail.appendChild(cocktailImage);
+          eachCocktail.appendChild(cocktailTitle);
+
+        }
+        else {
           var resultsSpace = document.getElementById('extras');
+
           var headerParent2 = document.getElementById('header2');
           headerParent2.classList.remove('hide');
+
+          var headerParent3 = document.getElementById('header3');
+          headerParent3.classList.remove('hide');
+
 
           var eachCocktail = document.createElement('div');
           eachCocktail.setAttribute('class', 'cocktail');
