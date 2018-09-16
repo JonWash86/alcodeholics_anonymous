@@ -87,9 +87,12 @@ function listCocktails() {
           cocktailImage.setAttribute('src', 'images/cocktail_imgs/' + cocktailObject.image);
           var cocktailTitle = document.createElement('h2');
           cocktailTitle.innerText = cocktailObject.name;
+          var missingIng = document.createElement('p');
+          missingIng.innerText = 'You are missing ' + cocktailObject.score + ' ingredients';
           resultsSpace.appendChild(eachCocktail);
           eachCocktail.appendChild(cocktailImage);
           eachCocktail.appendChild(cocktailTitle);
+          eachCocktail.appendChild(missingIng);
         }
       }
       // headerParent.appendChild(header);

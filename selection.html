@@ -9,10 +9,11 @@
     <script type='text/javascript' src='js/cocktails.js'></script>
     <script type='text/javascript' src='js/ingredients.js'></script>
     <script type='text/javascript' src='js/form.js'></script>
+    <script type='text/javascript' src='js/randomBGColor.js'></script>
     <script type='text/javascript' src='js/grid_popup.js'></script>
-  
+   
 </head>
-<body class="selections">
+<body>
   <header>
     <section>
       <a href="Homepage.html"><img src="http://i44.photobucket.com/albums/f35/idomosko/LogoMakr_5kAcgi_zpsvn3sdung.png" alt=""></a>
@@ -34,20 +35,17 @@
       <label>
         <figcaption>COGNAC</figcaption>
         <input type="radio" name="spirit" value='cognac'/>
-        <a href="#userPicks">
-        <img src="images/spirit_imgs/cognac.png"/></a>
+        <img src="images/spirit_imgs/cognac.png"/>
       </label>
       <label>
         <figcaption>GIN</figcaption>
         <input type="radio" name="spirit" value="gin"/>
-        <a href="#userPicks">
-        <img src="images/spirit_imgs/gin.png"/></a>
+        <img src="images/spirit_imgs/gin.png"/>
       </label>
       <label>
         <figcaption>RUM</figcaption>
         <input type="radio" name="spirit" value="rum"/>
-        <a href="#userPicks">
-        <img src="images/spirit_imgs/rum.png"/></a>
+        <img src="images/spirit_imgs/rum.png"/>
       </label>
 
     </div>
@@ -56,74 +54,37 @@
       <label>
         <figcaption>TEQUILA</figcaption>
         <input type="radio" name="spirit" value="tequila"/>
-        <a href="#userPicks">
-        <img src="images/spirit_imgs/tequila.png" /></a>
+        <img src="images/spirit_imgs/tequila.png" />
       </label>
       <label>
         <figcaption>VODKA</figcaption>
       <input type="radio" name="spirit" value="vodka"/>
-      <a href="#userPicks">
-        <img src="images/spirit_imgs/vodka.png" /></a>
+        <img src="images/spirit_imgs/vodka.png" />
       </label>
       <label>
         <figcaption>WHISKEY</figcaption>
         <input type="radio" name="spirit" value="whiskey"/>
-        <a href="#userPicks">
-          <img src="images/spirit_imgs/whiskey.png" /></a>
+          <img src="images/spirit_imgs/whiskey.png" />
       </label>
     </div>
 
     <section id='userPicks'>
       <div class="bgOverlay"></div>
       <fieldset id='ingredientsCheck'>
-        <legend>What do you have lying around?</legend>
-        <div id='checkBoxSpace'></div>
-      </fieldset>
-      <div class="submitFormBtn">
-        <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
+      <legend>What do you have lying around?</legend>
+      <div id='checkBoxSpace'>
       </div>
+    </fieldset>
+    <div class="submitFormBtn">
+    <input type='button' value='Mix Something Up!' id='submitIngredients' onclick='storeIngredients()'>
+    </div>
     </section>
   </form>
   <script type="text/javascript" src="js/form.js"></script>
   <script>
     window.addEventListener('load', buildBoxes);
-    window.addEventListener('load', addEventsToTDs);
-    window.addEventListener('load', addEventsToFieldSet);
-    var getTD = document.getElementsByTagName('td');
-    var getFieldSet = document.getElementById('ingredientsCheck');
-
-
-    function addEventsToFieldSet() {
-      getFieldSet.addEventListener('mouseover', clearBGColor);
-    }
-
-    function addEventsToTDs() {
-      for(var i = 0; i < getTD.length; i++) {
-        getTD[i].addEventListener('mouseover', changeBGColor);
-      }
-    }
-
-    function changeBGColor(e) {
-      var target = e.target;
-      console.log(target);
-      if(target.nodeName == 'TD') {
-        for(var i = 0; i < getTD.length; i++) {
-          getTD[i].style.backgroundColor = '';
-        }
-        target.style.backgroundColor = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 0.5)';
-      }
-  }
-
-  function clearBGColor(e) {
-    var target = e.target;
-    if(target.nodeName == 'FIELDSET') {
-    for(var i = 0; i < getTD.length; i++) {
-          getTD[i].style.backgroundColor = '';
-        }
-    }
-  }
-
-
+    window.addEventListener('load', functionsOnPageLoad);
+    
   </script>
 </body>
 </html>

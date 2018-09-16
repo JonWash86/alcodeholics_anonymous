@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 
 /* Generic */
-/* body {
+body {
     margin: 0;
     font-family: 'Fugaz One', cursive;
 }
@@ -24,8 +24,11 @@ img, .cocktail {
 .hide {
     display: none;
 }
+ul {
+    list-style: none;
+}
 /* --------------------------------- selection page -------------------------------- */
-  /* .spirit-selection, #userPicks, header section, nav ul, .homepage-content, .cocktails-grid, .popup-inner {
+  .spirit-selection, #userPicks, header section, nav ul, .homepage-content, .cocktails-grid, .popup-inner {
       display: flex;
       justify-content: center;
       text-align: center;
@@ -44,6 +47,7 @@ img, .cocktail {
     width: 33%;
     padding: 30px;
     box-sizing: border-box;
+    position: relative;
   }
   .spirit-selection img{
     height: 315px;
@@ -53,6 +57,15 @@ img, .cocktail {
       1px 1px #505961,
       2px 2px #505961,
       3px 3px #505961;
+  }
+  .spirit-selection input[type=radio]:checked {
+      visibility: visible;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.2;
   }
   #userPicks {
     height: 100vh;
@@ -81,7 +94,7 @@ img, .cocktail {
     background-color: white;
     border: 3px solid pink;
   }
-  #ingredientsCheck table {
+  #ingredientsCheck table, .imageAndTitle img {
       width: 100%;
   }
   fieldset legend {
@@ -97,7 +110,7 @@ img, .cocktail {
       font-size: 20px;
       padding: 5px;
   }
-  #ingredientsCheck td:hover, #ingredientsCheck label:hover, .exit-popup, .cocktail:hover {
+  #ingredientsCheck td:hover, #ingredientsCheck label:hover, .exit-popup, .cocktail:hover, .spirit-selection img {
       cursor: pointer;
   }
   .submitFormBtn {
@@ -120,9 +133,9 @@ img, .cocktail {
   .submitFormBtn input:hover {
     background-image: none;
     background-color: orange;
-  } */
+  }
   /* -------------------------- homepage --------------------------------- */
-/* .homepage {
+.homepage {
     margin: 0;
     background-image: url(https://www.inspiredtaste.net/wp-content/uploads/2012/10/Southside-Cocktail-Recipe-1-1200.jpg);
     background-size: cover;
@@ -157,9 +170,6 @@ header section {
 header img {
     max-height: 55px;
 }
-nav ul {
-    list-style: none;
-}
 nav ul li {
     font-size: 25px;
     color: white;
@@ -188,19 +198,20 @@ nav ul li {
     .yes:hover {
     background: teal;
     border: 2px solid teal;
-} */
+}
 
 /* --------------------------------- All Cocktails Page ------------------------------ */
-/* .all-cocktails h2, #popup h2 {
+.all-cocktails h2, #popup h2 {
     width: 100%;
     box-sizing: border-box;
 }
 .cocktails-grid {
     justify-content: left;
 }
-#vodka > h2, #tequila > h2, #rum > h2, #gin > h2, #whiskey > h2, #cognac > h2, .content > h2, .ingAndDesc > h2 {
+.cocktails-grid > h2, .ingAndDesc > h2 {
     border-bottom: 5px solid pink;
     text-transform: capitalize;
+    text-align: left;
 }
 .cocktail {
     width: 25%;
@@ -217,6 +228,7 @@ nav ul li {
     margin: 0;
     text-align: center;
     padding: 10px 0;
+    font-size: 20px;
 }
 #popup {
     width: 100%;
@@ -231,6 +243,7 @@ nav ul li {
     margin: auto;
     background-color: white;
     margin-top: 5%;
+    align-items: end;
     border: 5px solid purple;
     padding: 10px;
     position: relative;
@@ -253,9 +266,11 @@ nav ul li {
 .imageAndTitle, .ingAndDesc {
     width: 48%;
 }
-.imageAndTitle img {
-    max-width: 100%;
-} */ 
-
-/* Spirit and Ingredient Selection Form Styling */
-
+.ingAndDesc ul, .ingAndDesc ol {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.ingAndDesc ol {
+    margin-left: 20px;
+}
