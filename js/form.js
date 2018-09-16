@@ -19,9 +19,10 @@ function existIng() {
   var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
   for (var i = 0; i < allCocktailList.length; i++){
     if (storedSpirit === allCocktailList[i].spirit){
-      for(var storedIngredientsIndex = 0; storedIngredientsIndex < storedIngredients.length; storedIngredientsIndex++) {
-        if(allCocktailList[i].rawIngredients.includes(storedIngredients[storedIngredientsIndex])) {
-          allCocktailList[i].rawIngredients.splice(storedIngredients[storedIngredientsIndex],1);
+      for(var index = 0; index < storedIngredients.length; index++) {
+        var match = allCocktailList[i].rawIngredients.indexOf(storedIngredients[index]);
+        if (match >= 0){
+          allCocktailList[i].rawIngredients.splice((match), 1);
         }
       }
     }
@@ -120,7 +121,7 @@ function listCocktails() {
 
 function expandPopupResults(e) {
   console.log(this);
-  
+
   for(var cocktailIndex = 0; cocktailIndex < cocktailRecipes[localSpirit].length; cocktailIndex++) {
     if(this.dataset.drink == cocktailRecipes[localSpirit][cocktailIndex].name) {
       console.log(cocktailRecipes[localSpirit][cocktailIndex].name);

@@ -6,7 +6,6 @@ function buildCocktailGrid() {
         var spiritTitle = allCocktails[i][0].spirit;
         var createSpiritDiv = document.createElement('div');
         createSpiritDiv.setAttribute('id', spiritTitle)
-        createSpiritDiv.setAttribute('class', 'cocktails-grid')
         var h2 = document.createElement('h2');
         h2.innerText = spiritTitle + ' Cocktails';
         createSpiritDiv.appendChild(h2);
@@ -25,7 +24,6 @@ function buildCocktailGrid() {
             eachCocktail.appendChild(cocktailTitle);
             createSpiritDiv.appendChild(eachCocktail);
         }
-
     }
 }
 // Expand the popup for each cocktail when click
