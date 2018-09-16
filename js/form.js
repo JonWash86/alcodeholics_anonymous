@@ -13,14 +13,44 @@ function storeIngredients(){
   window.location.href="results.html";
 }
 
+
+function existIng() {
+  var storedSpirit = localStorage.getItem('spirit');
+  var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
+  for (var i = 0; i < allCocktailList.length; i++){
+    if (storedSpirit === allCocktailList[i].spirit){
+      for(var storedIngredientsIndex = 0; storedIngredientsIndex < storedIngredients.length; storedIngredientsIndex++) {
+        if(allCocktailList[i].rawIngredients.includes(storedIngredients[storedIngredientsIndex])) {
+          allCocktailList[i].exist.push(storedIngredients[storedIngredientsIndex]);
+          allCocktailList[i].rawIngredients.splice(storedIngredients[storedIngredientsIndex],1);
+        }
+      }
+    }
+  }
+}
+
+// function missingIngs() {
+//   var storedSpirit = localStorage.getItem('spirit');
+//   for (var i = 0; i < allCocktailList.length; i++){
+//     if (storedSpirit === allCocktailList[i].spirit){
+//       for(var existIngIndex = 0; existIngIndex < allCocktailList[i].exist.length; existIngIndex++) {
+//         if(allCocktailList[i].exist.includes(allCocktailList[i].rawIngredients[existIngIndex])) {
+//           allCocktailList[i].rawIngredients.splice(existIngIndex, 1);
+//       }
+//     }
+//     }
+//   }
+// }
+
 function scoreMatch(){
   var storedSpirit = localStorage.getItem('spirit');
   var storedIngredients = JSON.parse(localStorage.getItem('ingredients'));
   for (var i = 0; i < allCocktailList.length; i++){
     if (storedSpirit === allCocktailList[i].spirit){
       var recipeClone = allCocktailList[i].rawIngredients.slice();
+
       for (var number = 0; number < storedIngredients.length; number++){
-        var match = recipeClone.indexOf(storedIngredients[number])
+        var match = recipeClone.indexOf(storedIngredients[number]);
         if (match >= 0){
           recipeClone.splice((match), 1);
         };
@@ -88,6 +118,7 @@ function listCocktails() {
           var cocktailTitle = document.createElement('h2');
           cocktailTitle.innerText = cocktailObject.name;
           var missingIng = document.createElement('p');
+          missingIng.setAttribute('class', 'missingIngredients');
           missingIng.innerText = 'You are missing ' + cocktailObject.score + ' ingredients';
           resultsSpace.appendChild(eachCocktail);
           eachCocktail.appendChild(cocktailImage);
@@ -145,6 +176,13 @@ function expandPopupResults(e) {
         howToMakeList.appendChild(howToMakeStep);
       }
       ingAndDesc.appendChild(howToMakeList);
+      var missIngTitle = document.createElement('p');
+      missIngTitle.setAttribute('class', 'missingIngredients')
+      missIngTitle.innerText = 'Missing ingredients: ';
+      for(var missingIngIndex = 0; missingIngIndex < cocktailRecipes[localSpirit][cocktailIndex].rawIngredients.length; missingIngIndex++) {
+        missIngTitle.innerText += cocktailRecipes[localSpirit][cocktailIndex].rawIngredients[missingIngIndex] + ', ';
+      }
+      ingAndDesc.appendChild(missIngTitle);
       var exitPopup = document.createElement('a');
       exitPopup.setAttribute('class', 'exit-popup');
       exitPopup.innerText = 'X';

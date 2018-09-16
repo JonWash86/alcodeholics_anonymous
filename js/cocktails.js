@@ -4,6 +4,8 @@ function Cocktail(spirit, name, ingredients, image, howToMake, rawIngredients) {
     this.ingredients = ingredients;
     this.image = image;
     this.howToMake = howToMake;
+    this.missing = [];
+    this.exist = [];
     this.score = 100;
     this.breakSteps = this.howToMake.split('.');
     this.rawIngredients= rawIngredients;
