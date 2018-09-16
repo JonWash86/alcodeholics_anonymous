@@ -72,7 +72,7 @@ ul {
     box-sizing: border-box;
     padding: 40px;
     position: relative;
-    background-image: url(https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_960_720.jpg);
+    background-image: url('https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_960_720.jpg');
     align-items: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
