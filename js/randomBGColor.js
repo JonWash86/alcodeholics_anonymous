@@ -8,7 +8,6 @@ function addEventsToTDs() {
 
 function changeBGColor(e) {
     var target = e.target;
-    console.log(target);
     if(target.nodeName == 'TD') {
         for(var i = 0; i < getTD.length; i++) {
             getTD[i].style.backgroundColor = '';
@@ -16,7 +15,6 @@ function changeBGColor(e) {
     target.style.backgroundColor = 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', 0.5)';
     }
 }
-
 
 function functionsOnPageLoad() {
     addEventsToTDs();
