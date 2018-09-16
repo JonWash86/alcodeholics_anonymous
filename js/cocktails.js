@@ -73,9 +73,7 @@ cognacCocktails.push(new Cocktail('cognac', 'Ode To Tiki', ['2 oz cognac', ' 1 o
 cognacCocktails.push(new Cocktail('cognac', 'Brandy Alexander', ['2oz cognac', '1oz Dark creme de Cacao', '1oz Cream'], 'brandy_alexander.jpg', 'Add all the ingredients into a shaker with ice and shake. Strain into a chilled cocktail glass. Garnish with freshly grated nutmeg', ['creme de cacao', 'heavy cream']));
 cognacCocktails.push(new Cocktail('cognac', 'Brandy Crusta', ['2oz cognac', '1/4 oz triple sec', '1/2 oz fresh lemon juice', '1/2 oz simple syrup', '1tsp maraschino liqueur', '1 dash angostura bitters'], 'brandy_crusta.jpg', 'Add all ingredients to a shaker and fill with ice. Shake, and strain into a Champagne Coupe with a sugar rim and garnish with a lemon twist', ['triple sec', 'lemon', 'sugar', 'maraschino liqueur', 'bitters']));
 
-
 var allCocktails = [vodkaCocktails, rumCocktails, ginCocktails, tequilaCocktails, whiskeyCocktails, cognacCocktails];
-
 
 var cocktailRecipes = {vodka: vodkaCocktails, rum: rumCocktails, gin: ginCocktails, tequila: tequilaCocktails, whiskey: whiskeyCocktails, cognac: cognacCocktails};
 

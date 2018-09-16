@@ -1,4 +1,4 @@
- 
+
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 
 /* Generic */
@@ -207,6 +207,7 @@ nav ul li {
 }
 .cocktails-grid {
     justify-content: left;
+    display:flex;
 }
 .cocktails-grid > h2, .ingAndDesc > h2 {
     border-bottom: 5px solid pink;

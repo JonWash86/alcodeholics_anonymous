@@ -6,6 +6,7 @@ function buildCocktailGrid() {
         var spiritTitle = allCocktails[i][0].spirit;
         var createSpiritDiv = document.createElement('div');
         createSpiritDiv.setAttribute('id', spiritTitle)
+        createSpiritDiv.setAttribute('class', 'cocktails-grid');
         var h2 = document.createElement('h2');
         h2.innerText = spiritTitle + ' Cocktails';
         createSpiritDiv.appendChild(h2);
@@ -28,12 +29,8 @@ function buildCocktailGrid() {
 }
 // Expand the popup for each cocktail when click
 function expandPopup(e) {
-     console.log(e.target);
-     console.log(this);
-
     for(var allCocktailsLoop = 0; allCocktailsLoop < allCocktails.length; allCocktailsLoop++) {
         for(var eachSpiritLoop = 0; eachSpiritLoop < allCocktails[allCocktailsLoop].length; eachSpiritLoop++) {
-
             if(this.dataset.drink === allCocktails[allCocktailsLoop][eachSpiritLoop].name) {
             var popup = document.getElementById('popup');
             var popupInner = document.createElement('div');
@@ -67,9 +64,6 @@ function expandPopup(e) {
                 stepLi.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].breakSteps[i] + '.';
                 howToMakePopup.appendChild(stepLi);
             }
-
-            // howToMakePopup.innerText = allCocktails[allCocktailsLoop][eachSpiritLoop].howToMake;
-
             imgAndTitle.appendChild(imagePopup);
             imgAndTitle.appendChild(titlePopup);
             ingAndDesc.appendChild(ingredientsTitle);
@@ -80,9 +74,7 @@ function expandPopup(e) {
             popupInner.appendChild(ingAndDesc);
             popupInner.appendChild(exitPopup);
             popup.appendChild(popupInner);
-
             };
-
         }
     }
 }
