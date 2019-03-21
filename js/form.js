@@ -66,8 +66,6 @@ function listCocktails() {
           var resultsSpace = document.getElementById('resultsSpace');
           var headerParent = document.getElementById('header1');
           headerParent.classList.remove('hide');
-          // var header = document.createElement('h2');
-          // header.innerText = 'Heres what you can make';
           var eachCocktail = document.createElement('div');
           eachCocktail.setAttribute('class', 'cocktail');
           eachCocktail.dataset.drink = cocktailRecipes[localSpirit][cocktailIndex].name;
